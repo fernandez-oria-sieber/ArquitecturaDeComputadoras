@@ -19,34 +19,29 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module rx_interface 
+module rx_module 
 	#(
-		parameter DBIT = 8			// # data bits 
-			     // SB_TICK = 16		// # ticks for stop bits
+		parameter DBIT = 8,			// # data bits 
+			      SB_TICK = 16		// # ticks for stop bits
    )
 	(
-	 input wire clk, reset,
-	 input rx_done_tick, rd,
-	 input wire [7:0] dout,
-	 output wire [7:0] A, B,
-	 output wire [5:0] Op,
-	 output reg wr
-	 
+	 input wire clk, reset, rx, s_tick,
+	 output reg rx_done_tick,
+	 output wire [7:0] dout		
 	);
 	
 	// symbolic state declaration
 	localparam [1:0]
 	idle = 2'b00,
-	receive = 2'b01,
-	transmit = 2'b10,
-	clean = 2'b11;
+	start = 2'b01,
+	data = 2'b10,
+	stop = 2'b11;
 	
 	// signal declaration
 	reg [1:0] state_reg , state_next ;
-	//reg [3:0] s_reg , s_next ;
-	//reg [2:0] n_reg , n_next ;
-	reg [7:0] first_op, second_op,aux, aux1, aux2;
-	reg [5:0] op;
+	reg [3:0] s_reg , s_next ;
+	reg [2:0] n_reg , n_next ;
+	reg [7:0] b_reg , b_next ;
 	
 	// body
 	// FSMD state & data registers
@@ -54,82 +49,69 @@ module rx_interface
 	if (reset)
 		begin
 			state_reg <= idle;
-			first_op <= 0;
-			second_op <= 0;
-			op <= 0;
-			aux <= 48;
-			aux1 <= 48;
-			aux2 <= 48;
+			s_reg <= 0;
+			n_reg <= 0;
+			b_reg <= 0;
 		end
 	else
 		begin
 			state_reg <= state_next ;
+			s_reg <= s_next;
+			n_reg <= n_next;
+			b_reg <= b_next;
 		end
 	
 	// FSMD next-state logic
 	always @*
 	begin
+		rx_done_tick = 1'b0;
 		state_next = state_reg ;
-		wr = 1'b0;
-
+		s_next = s_reg;
+		n_next = n_reg;
+		b_next = b_reg;
 		case (state_reg)
 			idle :
-				if (rx_done_tick)
+				if (~rx)
 					begin
-						state_next = receive;
+						state_next = start;
+						s_next = 0;
 					end
-			receive :
-				case (dout)
-				    102:                        //102: F en ascii (first operand)
-				        begin 
-				            first_op = (aux2 - 48)*100+(aux1 - 48)*10+ aux - 48; 
-				            aux  <= 48;
-                            aux1 <= 48;
-                            aux2 <= 48;
-                        end
-				    114:                        //114: S en ascii (second operand)
-				         begin
-                             second_op = (aux2 - 48)*100+(aux1 - 48)*10+ aux - 48;
-                             aux <= 48;
-                             aux1 <= 48;
-                             aux2 <= 48;
-                         end
-				    111:                        //111: O en ascii (operation)  
-				        begin                  
-                            case (aux)
-                                43: op= 32;     // + (suma)
-                                45: op= 34;     // -  (resta)
-                                38: op= 36;     // & (and)
-                                124: op= 37;    // | (or)
-                                120: op= 38;    // x (xor)
-                                97: op= 3;      // a (sra)
-                                108: op= 2;     // l (srl)
-                                110: op= 39;    // n (nor)
-                                default: op = -1;
-                            endcase
-                            aux <= 48;
-                            aux1 <= 48;
-                            aux2 <= 48;
-                         end
-				    100: state_next = transmit; //100: D en ascii (done)
-				    default:
-				        begin
-                            aux2= aux1;
-                            aux1= aux; 
-                            aux = dout;
-				        end
-				 endcase
-		  transmit :
-		      begin
-                  wr = 1'b1;
-                  state_next = idle ;
-              end 
-		      
+			start :
+				if (s_tick)
+					if (s_reg==7)
+						begin
+							state_next = data;
+							s_next = 0;
+							n_next = 0;
+						end
+					else
+						s_next = s_reg + 1;
+			data :
+				if (s_tick)
+					if (s_reg==15)
+						begin
+							s_next = 0;
+							b_next = {rx , b_reg[7:11]} ;
+							if (n_reg==(DBIT-1))
+								state_next = stop ;
+							else
+								n_next = n_reg + 1;
+						end
+					else
+						s_next = s_reg + 1;
+			stop:
+				if (s_tick)
+					if (s_reg==(SB_TICK - 1))
+						begin
+							state_next = idle;
+							rx_done_tick =1'b1;
+						end
+					else
+						s_next = s_reg + 1;
+
 		endcase
 	end
 	// output
-	assign A = first_op;
-	assign B = second_op;
-	assign Op = op;
+	assign dout = b_reg;
 	
 endmodule
