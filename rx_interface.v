@@ -29,7 +29,8 @@ module rx_interface
 	 input rx_done_tick, rd,
 	 input wire [7:0] dout,
 	 output wire [7:0] A, B,
-	 output wire [5:0] Op
+	 output wire [5:0] Op,
+	 output reg wr
 	 
 	);
 	
@@ -69,6 +70,7 @@ module rx_interface
 	always @*
 	begin
 		state_next = state_reg ;
+		wr = 1'b0;
 
 		case (state_reg)
 			idle :
@@ -78,9 +80,9 @@ module rx_interface
 					end
 			receive :
 				case (dout)
-				    102:
+				    102:                        //102: F en ascii (first operand)
 				        begin 
-				            first_op = (aux2 - 48)*100+(aux1 - 48)*10+ aux - 48; //102: F en ascii (first operand)
+				            first_op = (aux2 - 48)*100+(aux1 - 48)*10+ aux - 48; 
 				            aux  <= 48;
                             aux1 <= 48;
                             aux2 <= 48;
@@ -109,7 +111,7 @@ module rx_interface
                             aux1 <= 48;
                             aux2 <= 48;
                          end
-				    100: state_next = transmit;
+				    100: state_next = transmit; //100: D en ascii (done)
 				    default:
 				        begin
                             aux2= aux1;
@@ -117,6 +119,12 @@ module rx_interface
                             aux = dout;
 				        end
 				 endcase
+		  transmit :
+		      begin
+                  wr = 1'b1;
+                  state_next = idle ;
+              end 
+		      
 		endcase
 	end
 	// output
