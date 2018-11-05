@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module rx_module 
+module interface_rx 
 	#(
 		parameter DBIT = 8,			// # data bits 
 			      SB_TICK = 16		// # ticks for stop bits

@@ -16,15 +16,14 @@ module Main #(parameter size = 8)
 	 reg rx_empty, tx_done_tick;
 	 wire wr, s_tick, rx_done_tick, rd;
 	 
-	 always @(posedge clk)
-	 begin
+	 //always @(posedge clk)
+	 //begin
 		//a = valor;
-	 end
+	 //end
 	 
 	 br_generator br_g (clk, s_tick);
 	 
-	 rx_module #(.DBIT(size), .SB_TICK(16)) rx_mod (.clk(clk), .reset(reset), .rx(rx), .s_tick(s_tick), 
-	 .rx_done_tick(rx_done_tick),.dout(dout));
+	 rx_module #(.DBIT(size), .SB_TICK(16)) rx_mod (.clk(clk), .reset(reset), .rx(rx), .s_tick(s_tick), .rx_done_tick(rx_done_tick),.dout(dout));
 	 
 	 interface_rx #(.DBIT(size)) int_rx (clk, reset,rx_done_tick, rd, dout, A, B, Op, rx_empty);
 	 
