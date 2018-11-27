@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module interface_rx
+module rx_interface
 	#(
 		parameter DBIT = 8			// # data bits 
 			     // SB_TICK = 16		// # ticks for stop bits
@@ -46,7 +46,10 @@ module interface_rx
 	//reg [3:0] s_reg , s_next ;
 	//reg [2:0] n_reg , n_next ;
 	reg [7:0] first_op, second_op,aux, aux1, aux2;
+	reg [7:0] first_op_next, second_op_next,aux_next, aux1_next, aux2_next;
 	reg [5:0] op;
+    reg [5:0] op_next;
+        
 	
 	// body
 	// FSMD state & data registers
@@ -63,7 +66,13 @@ module interface_rx
 		end
 	else
 		begin
-			state_reg <= state_next ;
+			state_reg <= state_next;
+            first_op <= first_op_next;
+            second_op <= second_op_next;
+            op <= op_next;
+            aux <= aux_next;
+            aux1 <= aux2_next;
+            aux2 <= aux_next;
 		end
 	
 	// FSMD next-state logic
@@ -82,47 +91,48 @@ module interface_rx
 				case (dout)
 				    102:                        //102: F en ascii (first operand)
 				        begin 
-				            first_op = (aux2 - 48)*100+(aux1 - 48)*10+ aux - 48; 
-				            aux  <= 48;
-                            aux1 <= 48;
-                            aux2 <= 48;
+				            first_op_next = (aux2 - 48)*100+(aux1 - 48)*10+ aux - 48; 
+				            aux_next  <= 48;
+                            aux1_next <= 48;
+                            aux2_next <= 48;
                         end
 				    114:                        //114: S en ascii (second operand)
 				         begin
-                             second_op = (aux2 - 48)*100+(aux1 - 48)*10+ aux - 48;
-                             aux <= 48;
-                             aux1 <= 48;
-                             aux2 <= 48;
+                             second_op_next = (aux2 - 48)*100+(aux1 - 48)*10+ aux - 48;
+                             aux_next <= 48;
+                             aux1_next <= 48;
+                             aux2_next <= 48;
                          end
 				    111:                        //111: O en ascii (operation)  
 				        begin                  
                             case (aux)
-                                43: op= 32;     // + (suma)
-                                45: op= 34;     // -  (resta)
-                                38: op= 36;     // & (and)
-                                124: op= 37;    // | (or)
-                                120: op= 38;    // x (xor)
-                                97: op= 3;      // a (sra)
-                                108: op= 2;     // l (srl)
-                                110: op= 39;    // n (nor)
-                                default: op = -1;
+                                43: op_next= 32;     // + (suma)
+                                45: op_next= 34;     // -  (resta)
+                                38: op_next= 36;     // & (and)
+                                124: op_next= 37;    // | (or)
+                                120: op_next= 38;    // x (xor)
+                                97: op_next= 3;      // a (sra)
+                                108: op_next= 2;     // l (srl)
+                                110: op_next= 39;    // n (nor)
+                                default: op_next = -1;
                             endcase
-                            aux <= 48;
-                            aux1 <= 48;
-                            aux2 <= 48;
+                            aux_next <= 48;
+                            aux1_next <= 48;
+                            aux2_next <= 48;
                          end
 				    100: state_next = transmit; //100: D en ascii (done)
 				    default:
 				        begin
-                            aux2= aux1;
-                            aux1= aux; 
-                            aux = dout;
+                            aux2_next= aux1;
+                            aux1_next= aux; 
+                            aux_next = dout;
 				        end
 				 endcase
 		  transmit :
 		      begin
-                  rx_empty = 1'b1;
-                  state_next = idle ;
+		          rx_empty = 1'b1;
+		          if (rd)
+		              state_next = idle ;
               end 
 		      
 		endcase

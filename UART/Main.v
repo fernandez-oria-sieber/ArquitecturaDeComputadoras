@@ -11,10 +11,10 @@ module Main #(parameter size = 8)
 	output tx
     );
 	 
-	 reg signed[size-1:0] a, b,dout, leds; 
-	 reg [5:0] op;
-	 reg rx_empty, tx_done_tick;
-	 wire wr, s_tick, rx_done_tick, rd;
+	 wire signed[size-1:0] a, b; 
+	 wire [size-1:0] dout, leds;
+	 wire [5:0] op;
+	 wire rx_empty, wr, s_tick, rx_done_tick, rd, tx_done_tick;
 	 
 	 //always @(posedge clk)
 	 //begin
@@ -25,9 +25,9 @@ module Main #(parameter size = 8)
 	 
 	 rx_module #(.DBIT(size), .SB_TICK(16)) rx_mod (.clk(clk), .reset(reset), .rx(rx), .s_tick(s_tick), .rx_done_tick(rx_done_tick),.dout(dout));
 	 
-	 interface_rx #(.DBIT(size)) int_rx (clk, reset,rx_done_tick, rd, dout, A, B, Op, rx_empty);
+	 rx_interface #(.DBIT(size)) int_rx (clk, reset,rx_done_tick, rd, dout, a, b, op, rx_empty);
 	 
-	 ALU #(.size(size)) alu (.Op(op), .A(a), .B(b), .Leds(leds), .rx_empty(rx_empty), .wr(wr));
+	 ALU #(.size(size)) alu ( .rd(rd), .clk(clk), .Op(op), .A(a), .B(b), .Leds(leds), .rx_empty(rx_empty), .wr(wr));
      
      //interface_tx
      

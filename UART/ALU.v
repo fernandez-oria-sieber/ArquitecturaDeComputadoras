@@ -5,14 +5,15 @@ module ALU #(parameter size = 8)
 		input signed[size-1:0] B,
 		input rx_empty, clk, 
 		output[size-1:0] Leds,
-		output wr
+		output wr, rd
 	);	
 	
 	// signal declaration
 	reg[size-1:0] aux;
-	reg aux2, state_reg , state_next;;
-	assign Leds = aux, 
-	wr = aux2;
+	reg aux2, aux3, state_reg , state_next;
+	assign Leds = aux,
+	wr = aux2, 
+	rd = aux3;
 	
 	// symbolic state declaration
     localparam 
@@ -34,9 +35,15 @@ module ALU #(parameter size = 8)
                 idle :
                     begin
                         if (aux2 == 1'b1)
-                            aux2 = 1'b0;
+                            begin
+                                aux2 = 1'b0;
+                                aux3 = 1'b0;
+                            end
                         if (rx_empty)
-                            state_next = operate;
+                            begin
+                                state_next = operate;
+                                aux3 = 1'b1;
+                            end
                     end
                 operate :
                     begin
@@ -54,6 +61,7 @@ module ALU #(parameter size = 8)
                                 default: 	aux = 			-1				;
                         endcase
                         aux2= 1'b1;
+                        state_next = idle;
                     end 
         endcase
 	end

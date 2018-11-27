@@ -91,7 +91,7 @@ module rx_module
 					if (s_reg==15)
 						begin
 							s_next = 0;
-							b_next = {rx , b_reg[7:11]} ;
+							b_next = {rx , b_reg[7:1]} ;
 							if (n_reg==(DBIT-1))
 								state_next = stop ;
 							else
