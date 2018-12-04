@@ -1,52 +1,49 @@
+`timescale 1ns / 1ps
+
 module ALU #(parameter size = 8)
 	(
 		input[5:0] Op,
 		input signed[size-1:0] A,
 		input signed[size-1:0] B,
-		input rx_empty, clk, 
+		input rx_empty, clk, tx_full, 
 		output[size-1:0] Leds,
 		output wr, rd
 	);	
 	
 	// signal declaration
 	reg[size-1:0] aux;
-	reg aux2, aux3, state_reg , state_next;
-	assign Leds = aux,
-	wr = aux2, 
-	rd = aux3;
+	reg wr_aux, rd_aux, state_reg , state_next;
+	
+	assign Leds = aux, // Resultado de la ALU
+	wr = wr_aux, // Bandera para la interface de transmisión
+	rd = rd_aux; // Bandera para la interface de recepción
 	
 	// symbolic state declaration
-    localparam 
-    idle = 1'b0,
-    operate = 1'b1;
+//    localparam 
+//    idle = 2'b00,
+//    operate = 2'b01,
+//    transmit = 2'b10;
     
     
     // body
     // FSMD state & data registers
-    always @(posedge clk)
-        begin
-            state_reg <= state_next;
-        end
+//    always @(posedge clk)
+//        begin
+//            state_reg <= state_next;
+//        end
     
 
 	always @(*)
 	begin
-        case (state_reg)
-                idle :
-                    begin
-                        if (aux2 == 1'b1)
-                            begin
-                                aux2 = 1'b0;
-                                aux3 = 1'b0;
-                            end
-                        if (rx_empty)
-                            begin
-                                state_next = operate;
-                                aux3 = 1'b1;
-                            end
-                    end
-                operate :
-                    begin
+//        case (state_reg)
+//                idle :
+//                    if (rx_empty)
+//                        begin
+//                            state_next = operate;
+//                            rd_aux = 1'b1;
+//                        end
+//                operate :
+//                    begin
                         case (Op)
                                 6'b100000: 	aux = 	A 		+ 		B		; 		// ADD 	32
                                 6'b100010: 	aux = 	A 		- 		B		; 		// SUB 	34
@@ -60,9 +57,18 @@ module ALU #(parameter size = 8)
                                 6'b000001: 	aux = 					B		; 		// B 		1
                                 default: 	aux = 			-1				;
                         endcase
-                        aux2= 1'b1;
-                        state_next = idle;
-                    end 
-        endcase
+//                        wr_aux= 1'b1;
+//                        state_next = transmit;
+//                    end 
+//                transmit:
+//                    if (tx_full)
+//                        begin
+//                            wr_aux = 1'b0;
+//                            rd_aux = 1'b0;
+//                            state_next = idle;
+//                        end
+//                default :
+//                    state_next = idle;  
+//        endcase
 	end
 endmodule

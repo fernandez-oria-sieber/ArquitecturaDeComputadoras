@@ -1,54 +1,53 @@
 `timescale 1ns / 1ps
 
-module rx_interface
+module tx_interface
 	#(
 	   parameter DBIT = 8			// # data bits
 	   // SB_TICK = 16		// # ticks for stop bits
     )
 	(
-	   input wire clk, reset,rx_done_tick, rd,
-	   input wire [7:0] dout,
-	   output wire [7:0] A, B,
-	   output wire [5:0] Op,
-	   output reg rx_empty
+	   input wire clk, reset,tx_done_tick, wr,
+	   input wire [7:0] leds,
+	   output wire [7:0] d_in,
+	   output wire tx_start, tx_full
 	);
 	
 	// symbolic state declaration
 	localparam [1:0]
 	idle = 2'b00,
-	receive = 2'b01,
-	transmit = 2'b10,
-	clean = 2'b11;
+	operate = 2'b01,
+	transmit = 2'b10;
 	
 	// signal declaration
-	reg [1:0] state_reg;
+	reg [1:0] state_reg , state_next ;
 	reg [7:0] first_op, second_op,aux, aux1, aux2;
 	reg [5:0] op;
+	reg algo;
         
 	// body
 	// FSMD next-state logic
 	always @(posedge clk , posedge reset)
 	begin
-        if (reset) 
+        if (reset) // ¿va con posedge en el always?
             begin
                 state_reg <= idle;
-                first_op <= 0;
-                second_op <= 0;
-                op <= 0;
-                aux <= 48; // aux, aux1 y aux2 los inicializamos en 0 (ascii=48)
-                aux1 <= 48;
-                aux2 <= 48;
+                
+               
             end
         else
             begin
-                rx_empty = 1'b0;
+                state_next = state_reg ;
+//                rx_empty = 1'b0;
             
                 case (state_reg)
                     idle :
-                        if (rx_done_tick) state_reg = receive;
-                    receive :
-                      begin
-                        case (dout)
+                            begin
+                                aux <= 48;
+                                aux1 <= 48;
+                                aux2 <= 48;
+                            end
+                    operate :
+                        case (algo)
                             102:                        //102: 'f' en ascii (first operand)
                                 begin 
                                     first_op = (aux2-48)*100 + (aux1-48)*10 + aux-48; 
@@ -80,21 +79,18 @@ module rx_interface
                                     aux1 <= 48;
                                     aux2 <= 48;
                                  end
-                            100: state_reg = transmit; //100: 'd' en ascii (done)
-                                
+                            100: state_next = transmit; //100: 'd' en ascii (done)
                             default: // Actualizo los numeros que voy ingresando
                                 begin
-                                    aux2 <= aux1;//se púede hacer mejor x10
+                                    aux2 <= aux1;
                                     aux1 <= aux; 
-                                    aux  <= dout;
+                                    aux  <= algo;
                                 end
                          endcase
-                         if (dout!=100) state_reg = idle; // si no siempre vuelve a idle y nunca va a transmit
-                       end
                   transmit :
                       begin
-                          rx_empty = 1'b1;
-                          if (rd) state_reg = idle ;
+                          state_next = 1'b1;
+                          if (algo) state_next = idle ;
                       end 
 		        endcase //end case (state_reg)
 		    end //end else
