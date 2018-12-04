@@ -25,58 +25,68 @@
 module interfaceTest;
 
 	// Inputs
-	reg [7:0] d_out;
-	reg rx_done;
-	reg rd;
+	//reg [7:0] d_out;
+	//reg rx_done;
+	//reg rd;
 
 	// Outputs
-	wire [7:0] r_data;
-	wire rx_empty;
+	//wire [7:0] r_data;
+	//wire rx_empty;
 
-	// Instantiate the Unit Under Test (UUT)
-	Interface uut (
-		.d_out(d_out), 
-		.rx_done(rx_done), 
-		.rd(rd), 
-		.r_data(r_data), 
-		.rx_empty(rx_empty)
-	);
 
-	initial begin
-		// Initialize Inputs
-		d_out = 0;
-		rx_done = 0;
-		rd = 0;
+     wire signed[7:0] a, b; 
+	 reg [7:0] dout, leds, d_in;
+	 wire [5:0] op;
+	 wire rx_empty;
+	 reg wr, s_tick, rx_done_tick, rd, tx_done_tick, tx_start, tx_full, clk, reset;
+	 
 
-		// Wait 100 ns for global reset to finish
-		#100;
-        
-		// Add stimulus here
-		rx_done=1;
-		#10;
-		d_out=51;
-		#50;
-		d_out=55;
-		#50;
-		d_out=43;
-		#25;
-		rd=1;
-		#25;
-		rd=0;
-		#25;
-		d_out=56;
-		#25;
-		rd=1;
-		#25;
-		rd=0;
-		#25;
-		d_out=49;
-		#25;
-		d_out=10;
-		#25;
-		rd=1;
-		#25;
-		rd=0;
-		
-	end
+    rx_interface int_rx (clk, reset,rx_done_tick, rd, dout, a, b, op, rx_empty);
+
+    always 
+        begin
+            #5 clk = ~clk;            
+        end
+     initial
+        begin
+            clk = 0;
+            reset = 1;
+            rx_done_tick = 0;
+            rd = 0;
+            dout = 0;
+            #20 reset = 0;          //#20
+            
+            #20 dout = 53;          // 5 #40
+            rx_done_tick = 1;
+            #20 rx_done_tick = 0;   // #60
+            #20 dout = 102; // f    // #80
+            rx_done_tick = 1;
+            #20 rx_done_tick = 0;   // # 100
+            #20 dout = 49; // 1     // #120
+            rx_done_tick = 1;
+            #20 rx_done_tick = 0;   // #140
+            #20 dout = 48; // 0     // #160
+            rx_done_tick = 1;
+            #20 rx_done_tick = 0;   // #180
+            #20 dout = 51; // 3     // #200
+            rx_done_tick = 1;
+            #20 rx_done_tick = 0;   // #220            
+            #20 dout = 114; // s    // #240
+            rx_done_tick = 1; 
+            #20 rx_done_tick = 0;   // #260
+            #20 dout = 43; // +     // #280
+            rx_done_tick = 1;
+            #20 rx_done_tick = 0;   // #300
+            #20 dout = 111; // o    // #320
+            rx_done_tick = 1;
+            #20 rx_done_tick = 0;   // #340
+            #20 dout = 100; // d    // #360
+            rx_done_tick = 1;
+            #20 rx_done_tick = 0;   // #380
+            #30 rd = 1;             // #410
+            rx_done_tick = 1;
+            #20 rx_done_tick = 0;   // #430
+            
+        end
+
 endmodule
