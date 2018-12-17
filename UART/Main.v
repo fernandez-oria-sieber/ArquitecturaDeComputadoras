@@ -14,12 +14,8 @@ module Main #(parameter size = 8) //FALTA TODO
 	 wire signed[size-1:0] a, b; 
 	 wire [size-1:0] dout, leds, d_in;
 	 wire [5:0] op;
-	 wire rx_empty, wr, s_tick, rx_done_tick, rd, tx_done_tick, tx_start, tx_full;
+	 wire rx_empty, wr, s_tick, rx_done_tick, rd, tx_done_tick, tx_start;
 	 
-	 //always @(posedge clk)
-	 //begin
-		//a = valor;
-	 //end
 	 
 	 br_generator br_g (clk, s_tick);
 	 
@@ -29,7 +25,7 @@ module Main #(parameter size = 8) //FALTA TODO
 	 
 	 ALU #(.size(size)) alu ( .clk(clk), .Op(op), .A(a), .B(b), .Leds(leds));
      
-     tx_interface #(.DBIT(size)) int_tx (clk, reset, tx_done_tick, rx_empty, leds, d_in, tx_start);
+     tx_interface #(.DBIT(size)) int_tx (clk, reset, tx_done_tick, rx_empty, leds, d_in, tx_start, rd);
      
      tx_module #(.DBIT(size), .SB_TICK(16)) tx_mod (clk, reset, tx_start , s_tick, d_in, tx_done_tick , tx);
 	 

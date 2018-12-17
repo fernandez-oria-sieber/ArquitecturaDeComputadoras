@@ -41,7 +41,7 @@ module rx_interface
             end
         else
             begin
-                rx_empty = 1'b0;
+                rx_empty = 1'b0; //aca no se estaria poniendo siempre en cero?
             
                 case (state_reg)
                     idle :
