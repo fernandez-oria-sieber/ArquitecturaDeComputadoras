@@ -23,7 +23,7 @@ module Main #(parameter size = 8) //FALTA TODO
 	 
 	 rx_interface #(.DBIT(size)) int_rx (clk, reset,rx_done_tick, rd, dout, a, b, op, rx_empty);
 	 
-	 ALU #(.size(size)) alu ( .clk(clk), .Op(op), .A(a), .B(b), .Leds(leds));
+	 ALU #(.size(size)) alu ( .Op(op), .A(a), .B(b), .Leds(leds));
      
      tx_interface #(.DBIT(size)) int_tx (clk, reset, tx_done_tick, rx_empty, leds, d_in, tx_start, rd);
      

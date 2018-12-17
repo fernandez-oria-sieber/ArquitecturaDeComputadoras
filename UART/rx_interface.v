@@ -38,11 +38,10 @@ module rx_interface
                 aux <= 48; // aux, aux1 y aux2 los inicializamos en 0 (ascii=48)
                 aux1 <= 48;
                 aux2 <= 48;
+                rx_empty = 1'b0;
             end
         else
             begin
-                rx_empty = 1'b0; //aca no se estaria poniendo siempre en cero?
-            
                 case (state_reg)
                     idle :
                         if (rx_done_tick) state_reg = receive;
@@ -94,7 +93,11 @@ module rx_interface
                   transmit :
                       begin
                           rx_empty = 1'b1;
-                          if (rd) state_reg = idle ;
+                          if (rd) 
+                            begin
+                                state_reg = idle ;
+                                rx_empty = 1'b0;
+                            end
                       end 
 		        endcase //end case (state_reg)
 		    end //end else
