@@ -35,3 +35,61 @@ launch_runs impl_1 -jobs 2
 wait_on_run impl_1
 launch_simulation
 source interfaceTestTx.tcl
+export_ip_user_files -of_objects  [get_files /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim1.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim1.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim.v
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v w ]
+add_files -fileset sim_1 /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v
+update_compile_order -fileset sim_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_simulation
+source interfaceTestTx.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top allTest [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+launch_simulation
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_simulation
+source allTest.tcl
+close_sim
+close_sim
+launch_simulation
+source allTest.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim

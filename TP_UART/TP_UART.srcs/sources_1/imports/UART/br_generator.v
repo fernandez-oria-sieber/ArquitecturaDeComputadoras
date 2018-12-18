@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
 module br_generator(
-    input clock,
-	 output reg tick
+        input clock,
+        output reg tick
 	 );
 
 	reg [7:0] ciclos=8'b0;

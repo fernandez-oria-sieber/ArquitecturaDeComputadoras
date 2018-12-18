@@ -3,11 +3,12 @@
 Oct  1 2018
 18:29:25
 /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/glbl.v,1545143021,verilog,,,,glbl,,,,,,,,
+/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v,1545158736,verilog,,,,allTest,,,,,,,,
 /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim_tx.v,1545145996,verilog,,,,interfaceTestTx,,,,,,,,
-/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v,1543883477,verilog,,/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v,,ALU,,,,,,,,
+/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v,1545147194,verilog,,/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v,,ALU,,,,,,,,
 /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/Main.v,1543884378,verilog,,,,Main,,,,,,,,
-/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v,1543322482,verilog,,/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v,,br_generator,,,,,,,,
-/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v,1543894545,verilog,,/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim1.v,,rx_interface,,,,,,,,
-/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_module.v,1543322482,verilog,,/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v,,rx_module,,,,,,,,
-/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v,1545146209,verilog,,/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim_tx.v,,tx_interface,,,,,,,,
-/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v,1543322482,verilog,,/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/Main.v,,tx_module,,,,,,,,
+/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v,1545158411,verilog,,/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v,,br_generator,,,,,,,,
+/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v,1545158078,verilog,,/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v,,rx_interface,,,,,,,,
+/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_module.v,1543322482,verilog,,/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v,,rx_module,,,,,,,,
+/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v,1545151474,verilog,,/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v,,tx_interface,,,,,,,,
+/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v,1545143459,verilog,,/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v,,tx_module,,,,,,,,
