@@ -33,6 +33,7 @@ read_verilog -library xil_defaultlib {
   /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v
   /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v
   /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_module.v
+  /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v
   /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v
   /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/Main.v
 }

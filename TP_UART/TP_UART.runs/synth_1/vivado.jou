@@ -2,8 +2,8 @@
 # Vivado v2018.2.2 (64-bit)
 # SW Build 2348494 on Mon Oct  1 18:25:39 MDT 2018
 # IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
-# Start of session at: Mon Dec  3 20:16:45 2018
-# Process ID: 30977
+# Start of session at: Tue Dec 18 12:14:54 2018
+# Process ID: 12565
 # Current directory: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1
 # Command line: vivado -log Main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Main.tcl
 # Log file: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/Main.vds

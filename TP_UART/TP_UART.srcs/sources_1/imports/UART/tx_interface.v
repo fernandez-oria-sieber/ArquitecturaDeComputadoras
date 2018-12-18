@@ -19,7 +19,7 @@ module tx_interface
 	transmit = 2'b10;
 	
 	// signal declaration
-	reg rd_aux, tx_start_aux;
+	reg rd_aux, tx_start_aux, zflag;
 	reg [1:0] state_reg;
 	reg [7:0] aux, dig, salida;
 	integer div;
@@ -29,9 +29,13 @@ module tx_interface
 	// FSMD next-state logic
 	always @(posedge clk , posedge reset)
 	begin
-        if (reset) // ¿va con posedge en el always?
+        if (reset)
             begin
                 state_reg <= idle;
+                salida <= 0;
+                rd_aux <= 1'b0;
+                zflag <= 1'b0;
+                tx_start_aux <= 1'b0;
             end
         else
             begin
@@ -47,28 +51,31 @@ module tx_interface
                         begin
                             dig = aux / div;
                             div = div / 10;
-                            if(dig) state_reg = transmit;
+                            if(dig || zflag == 1) state_reg = transmit;
                         end      
                     transmit :
                        begin
                           salida = dig;
+                          
                           tx_start_aux = 1'b1; 
                           if (tx_done_tick) 
                             begin
+                                zflag= 1'b1;
                                 state_reg = operate ;
                                 tx_start_aux = 1'b0;
-                                if (~div) 
+                                if (div == 0) 
                                     begin
                                         rd_aux = 1'b1;
+                                        zflag = 1'b0;
                                         state_reg = idle;
                                     end
-                                 else aux = aux % (div*10);
+                                else aux = aux % (div*10);
                             end
-                          
                         end 
 		        endcase //end case (state_reg)
 		    end //end else
-	end
+	end //end always
+    
 	// output
 	assign d_in = salida;
 	assign rd = rd_aux;
