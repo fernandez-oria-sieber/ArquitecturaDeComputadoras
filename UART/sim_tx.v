@@ -8,7 +8,7 @@ module interfaceTestTx;
 	reg wr, s_tick, rx_done_tick, tx_done_tick, tx_full, clk, reset, rx_empty;
     wire tx_start, rd;
     
-    tx_interface int_rx (clk, reset,tx_done_tick, rx_empty, leds, d_in, tx_start, rd);
+    tx_interface int_tx (clk, reset,tx_done_tick, rx_empty, leds, d_in, tx_start, rd);
 
     always 
         begin

@@ -22,7 +22,9 @@ module rx_interface
 	
 	// signal declaration
 	reg [1:0] state_reg;
-	reg [7:0] first_op, second_op,aux, aux1, aux2;
+	reg [7:0] first_op, second_op,aux;//, aux1, aux2;
+	reg [5:0] aux2; // solo usa 6 bits, da un warning si le ponemos 8 bits
+	reg [6:0] aux1; // solo usa 7 bits, da un warning si le ponemos 8 bits
 	reg [5:0] op;
         
 	// body
@@ -55,7 +57,7 @@ module rx_interface
                                     aux1 <= 48;
                                     aux2 <= 48;
                                 end
-                            114:                        //114: 's' en ascii (second operand)
+                            115:                        //115: 's' en ascii (second operand)
                                  begin
                                      second_op = (aux2-48)*100 + (aux1-48)*10 + aux-48;
                                      aux <= 48;
