@@ -44,7 +44,7 @@ module rx_interface
             begin
                 case (state_reg)
                     idle :
-                        if (rx_done_tick) state_reg = receive;
+                      if (rx_done_tick) state_reg = receive;
                     receive :
                       begin
                         case (dout)
@@ -61,7 +61,7 @@ module rx_interface
                                      aux <= 48;
                                      aux1 <= 48;
                                      aux2 <= 48;
-                                 end
+                                end
                             111:                        //111: 'o' en ascii (operation)  
                                 begin                  
                                     case (aux)
@@ -78,18 +78,17 @@ module rx_interface
                                     aux <= 48;
                                     aux1 <= 48;
                                     aux2 <= 48;
-                                 end
+                                end
                             100: state_reg = transmit; //100: 'd' en ascii (done)
-                                
                             default: // Actualizo los numeros que voy ingresando
                                 begin
                                     aux2 <= aux1;//se púede hacer mejor x10
                                     aux1 <= aux; 
                                     aux  <= dout;
                                 end
-                         endcase
+                        endcase
                          if (dout!=100) state_reg = idle; // si no siempre vuelve a idle y nunca va a transmit
-                       end
+                      end
                   transmit :
                       begin
                           rx_empty = 1'b1;
@@ -101,7 +100,8 @@ module rx_interface
                       end 
 		        endcase //end case (state_reg)
 		    end //end else
-	end
+	end //end always
+
 	// output
 	assign A = first_op;
 	assign B = second_op;

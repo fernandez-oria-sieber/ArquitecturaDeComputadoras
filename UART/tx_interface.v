@@ -66,15 +66,16 @@ module tx_interface
                                 if (div == 0) 
                                     begin
                                         rd_aux = 1'b1;
-                                        zflag <= 1'b0;
+                                        zflag = 1'b0;
                                         state_reg = idle;
                                     end
-                                 else aux = aux % (div*10);
+                                else aux = aux % (div*10);
                             end
                         end 
 		        endcase //end case (state_reg)
 		    end //end else
-	end
+	end //end always
+    
 	// output
 	assign d_in = salida;
 	assign rd = rd_aux;
