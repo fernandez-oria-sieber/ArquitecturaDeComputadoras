@@ -690,3 +690,35 @@ Vivado Simulator 2018.2
 Time resolution is 1 ps
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/Test_Top.v w ]
+add_files -fileset sim_1 /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/Test_Top.v
+update_compile_order -fileset sim_1
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+[Tue Dec 18 17:30:15 2018] Launched synth_1...
+Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/runme.log
+[Tue Dec 18 17:30:15 2018] Launched impl_1...
+Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/impl_1/runme.log
+open_hw
+close_hw
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 63 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2.2
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 7289.477 ; gain = 0.000 ; free physical = 945 ; free virtual = 6909
+Restored from archive | CPU: 0.040000 secs | Memory: 0.584747 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 7289.477 ; gain = 0.000 ; free physical = 945 ; free virtual = 6909
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 7432.016 ; gain = 318.586 ; free physical = 860 ; free virtual = 6825
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+close_design
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 18 17:54:58 2018...

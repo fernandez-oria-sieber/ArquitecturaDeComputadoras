@@ -93,3 +93,14 @@ relaunch_sim
 relaunch_sim
 relaunch_sim
 close_sim
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/Test_Top.v w ]
+add_files -fileset sim_1 /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/Test_Top.v
+update_compile_order -fileset sim_1
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+open_hw
+close_hw
+open_run impl_1
+close_design
