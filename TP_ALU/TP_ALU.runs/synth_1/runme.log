@@ -1,0 +1,318 @@
+
+*** Running vivado
+    with args -log Main.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Main.tcl
+
+
+****** Vivado v2018.2.2 (64-bit)
+  **** SW Build 2348494 on Mon Oct  1 18:25:39 MDT 2018
+  **** IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Main.tcl -notrace
+Command: synth_design -top Main -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 16166 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1274.688 ; gain = 82.918 ; free physical = 2689 ; free virtual = 12932
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Main' [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/Main.v:22]
+	Parameter size bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ALU' [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+	Parameter size bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (1#1) [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Main' (2#1) [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/Main.v:22]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1319.312 ; gain = 127.543 ; free physical = 2701 ; free virtual = 12944
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1319.312 ; gain = 127.543 ; free physical = 2700 ; free virtual = 12943
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1319.312 ; gain = 127.543 ; free physical = 2700 ; free virtual = 12943
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+WARNING: [Vivado 12-584] No ports matched 'leds[8]'. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[8]'. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[9]'. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[9]'. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[10]'. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[10]'. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[11]'. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[11]'. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[12]'. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[12]'. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Main_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1605.648 ; gain = 0.000 ; free physical = 2431 ; free virtual = 12674
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1605.648 ; gain = 413.879 ; free physical = 2508 ; free virtual = 12750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1605.648 ; gain = 413.879 ; free physical = 2508 ; free virtual = 12750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1605.648 ; gain = 413.879 ; free physical = 2509 ; free virtual = 12751
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:32]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1605.648 ; gain = 413.879 ; free physical = 2499 ; free virtual = 12742
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Main 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1605.648 ; gain = 413.879 ; free physical = 2488 ; free virtual = 12732
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:27 . Memory (MB): peak = 1611.648 ; gain = 419.879 ; free physical = 2361 ; free virtual = 12607
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:27 . Memory (MB): peak = 1611.648 ; gain = 419.879 ; free physical = 2361 ; free virtual = 12607
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:27 . Memory (MB): peak = 1612.648 ; gain = 420.879 ; free physical = 2361 ; free virtual = 12607
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 1612.648 ; gain = 420.879 ; free physical = 2361 ; free virtual = 12607
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 1612.648 ; gain = 420.879 ; free physical = 2361 ; free virtual = 12607
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 1612.648 ; gain = 420.879 ; free physical = 2361 ; free virtual = 12607
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 1612.648 ; gain = 420.879 ; free physical = 2361 ; free virtual = 12607
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 1612.648 ; gain = 420.879 ; free physical = 2361 ; free virtual = 12607
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 1612.648 ; gain = 420.879 ; free physical = 2361 ; free virtual = 12607
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     2|
+|3     |LUT1   |     1|
+|4     |LUT3   |     8|
+|5     |LUT4   |     3|
+|6     |LUT5   |    11|
+|7     |LUT6   |    30|
+|8     |MUXF7  |     4|
+|9     |FDRE   |    22|
+|10    |IBUF   |    12|
+|11    |OBUF   |     8|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   102|
+|2     |  alu    |ALU    |    26|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 1612.648 ; gain = 420.879 ; free physical = 2361 ; free virtual = 12607
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1612.648 ; gain = 134.543 ; free physical = 2413 ; free virtual = 12659
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 1612.656 ; gain = 420.879 ; free physical = 2413 ; free virtual = 12659
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 18 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+17 Infos, 10 Warnings, 10 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 1627.648 ; gain = 435.961 ; free physical = 2414 ; free virtual = 12659
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.runs/synth_1/Main.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Main_utilization_synth.rpt -pb Main_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1651.660 ; gain = 0.000 ; free physical = 2414 ; free virtual = 12659
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 11 17:50:27 2019...
