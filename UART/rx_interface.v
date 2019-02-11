@@ -22,7 +22,9 @@ module rx_interface
 	
 	// signal declaration
 	reg [1:0] state_reg;
-	reg [7:0] first_op, second_op,aux, aux1, aux2;
+	reg [7:0] first_op, second_op,aux;//, aux1, aux2;
+	reg [5:0] aux2; // solo usa 6 bits, da un warning si le ponemos 8 bits
+	reg [6:0] aux1; // solo usa 7 bits, da un warning si le ponemos 8 bits
 	reg [5:0] op;
         
 	// body
@@ -44,7 +46,7 @@ module rx_interface
             begin
                 case (state_reg)
                     idle :
-                        if (rx_done_tick) state_reg = receive;
+                      if (rx_done_tick) state_reg = receive;
                     receive :
                       begin
                         case (dout)
@@ -55,13 +57,13 @@ module rx_interface
                                     aux1 <= 48;
                                     aux2 <= 48;
                                 end
-                            114:                        //114: 's' en ascii (second operand)
+                            115:                        //115: 's' en ascii (second operand)
                                  begin
                                      second_op = (aux2-48)*100 + (aux1-48)*10 + aux-48;
                                      aux <= 48;
                                      aux1 <= 48;
                                      aux2 <= 48;
-                                 end
+                                end
                             111:                        //111: 'o' en ascii (operation)  
                                 begin                  
                                     case (aux)
@@ -78,18 +80,17 @@ module rx_interface
                                     aux <= 48;
                                     aux1 <= 48;
                                     aux2 <= 48;
-                                 end
+                                end
                             100: state_reg = transmit; //100: 'd' en ascii (done)
-                                
                             default: // Actualizo los numeros que voy ingresando
                                 begin
                                     aux2 <= aux1;//se púede hacer mejor x10
                                     aux1 <= aux; 
                                     aux  <= dout;
                                 end
-                         endcase
+                        endcase
                          if (dout!=100) state_reg = idle; // si no siempre vuelve a idle y nunca va a transmit
-                       end
+                      end
                   transmit :
                       begin
                           rx_empty = 1'b1;
@@ -101,7 +102,8 @@ module rx_interface
                       end 
 		        endcase //end case (state_reg)
 		    end //end else
-	end
+	end //end always
+
 	// output
 	assign A = first_op;
 	assign B = second_op;

@@ -22,7 +22,7 @@ module tx_interface
 	reg rd_aux, tx_start_aux, zflag;
 	reg [1:0] state_reg;
 	reg [7:0] aux, dig, salida;
-	integer div;
+	reg [6:0] div; //puede ser integer también, pero así no da warning
     
     
 	// body
@@ -36,6 +36,9 @@ module tx_interface
                 rd_aux <= 1'b0;
                 zflag <= 1'b0;
                 tx_start_aux <= 1'b0;
+                div <= 127;
+                dig <= 0;
+                aux <=0;
             end
         else
             begin
@@ -66,15 +69,16 @@ module tx_interface
                                 if (div == 0) 
                                     begin
                                         rd_aux = 1'b1;
-                                        zflag <= 1'b0;
+                                        zflag = 1'b0;
                                         state_reg = idle;
                                     end
-                                 else aux = aux % (div*10);
+                                else aux = aux % (div*10);
                             end
                         end 
 		        endcase //end case (state_reg)
 		    end //end else
-	end
+	end //end always
+    
 	// output
 	assign d_in = salida;
 	assign rd = rd_aux;

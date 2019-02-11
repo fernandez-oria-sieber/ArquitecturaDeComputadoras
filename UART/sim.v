@@ -1,44 +1,11 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   12:42:32 10/18/2016
-// Design Name:   Interface
-// Module Name:   /media/Pedro/Elementary/Facultad/Arquitectura/workspace/TP2/interfaceTest.v
-// Project Name:  TP2
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: Interface
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
-
 module interfaceTest;
 
-	// Inputs
-	//reg [7:0] d_out;
-	//reg rx_done;
-	//reg rd;
-
-	// Outputs
-	//wire [7:0] r_data;
-	//wire rx_empty;
-
-
-     wire signed[7:0] a, b; 
-	 reg [7:0] dout, leds, d_in;
-	 wire [5:0] op;
-	 wire rx_empty;
-	 reg wr, s_tick, rx_done_tick, rd, tx_done_tick, tx_start, tx_full, clk, reset;
+    wire signed[7:0] a, b, d_in; 
+	reg [7:0] dout, leds;
+	wire [5:0] op;
+	reg wr, s_tick, rx_done_tick, rd, tx_done_tick, tx_start, tx_full, clk, reset, rx_empty;
 	 
 
     rx_interface int_rx (clk, reset,rx_done_tick, rd, dout, a, b, op, rx_empty);
