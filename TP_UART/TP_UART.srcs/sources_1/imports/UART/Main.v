@@ -2,13 +2,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 				FS Inc.
 // Engineer: 				Luciano Fernandez Oria
-//					         Braian Sieber
+//					        Braian Sieber
 // Create Date:    		09:03:26 09/11/2018 
 //////////////////////////////////////////////////////////////////////////////////
-module Main #(parameter size = 8) //FALTA TODO
-	(
-	input rx, clk, reset,
-	output tx
+module Main #(parameter size = 8)
+    (
+        input rx, clk, reset,
+        input b1,
+        input b2,
+        input b3,
+        output tx,
+        output signed[size-1:0]show
     );
 	 
 	wire signed[size-1:0] a, b, d_in; 
@@ -16,8 +20,16 @@ module Main #(parameter size = 8) //FALTA TODO
 	wire [5:0] op;
 	wire rx_empty, wr, s_tick, rx_done_tick, tx_done_tick;
 	wire tx_start, rd;
+	reg [size-1:0] show_aux = 8'b11110010;
+    
+    always @(posedge clk)
+     begin
+        if(b1 ==1) show_aux = a;
+        if(b2 ==1) show_aux = b;
+        if(b3 ==1) show_aux = op;
+     end
 
-
+    assign show = show_aux;
 	br_generator br_g (clk, s_tick);
 
 	rx_module #(size, 16) rx_mod (clk, reset, rx, s_tick, rx_done_tick, dout);

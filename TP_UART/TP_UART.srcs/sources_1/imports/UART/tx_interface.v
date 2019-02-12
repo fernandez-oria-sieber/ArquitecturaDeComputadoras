@@ -16,7 +16,8 @@ module tx_interface
 	localparam [1:0]
 	idle = 2'b00,
 	operate = 2'b01,
-	transmit = 2'b10;
+	transmit = 2'b10,
+	transmit_reset = 2'b11;
 	
 	// signal declaration
 	reg rd_aux, tx_start_aux, zflag;
@@ -31,14 +32,14 @@ module tx_interface
 	begin
         if (reset)
             begin
-                state_reg <= idle;
-                salida <= 0;
-                rd_aux <= 1'b0;
-                zflag <= 1'b0;
-                tx_start_aux <= 1'b0;
-                div <= 127;
-                dig <= 0;
-                aux <=0;
+                state_reg <= transmit_reset;
+//                salida <= 0;
+//                rd_aux <= 1'b0;
+//                zflag <= 1'b0;
+//                tx_start_aux <= 1'b0;
+//                div <= 127;
+//                dig <= 0;
+//                aux <=0;
             end
         else
             begin
@@ -75,6 +76,23 @@ module tx_interface
                                 else aux = aux % (div*10);
                             end
                         end 
+                    transmit_reset :
+                       begin
+                          salida = 82;
+                          
+                          tx_start_aux = 1'b1; 
+                          if (tx_done_tick) 
+                            begin
+                                salida = 0;
+                                rd_aux = 1'b0;
+                                zflag = 1'b0;
+                                tx_start_aux = 1'b0;
+                                div = 127;
+                                dig = 0;
+                                aux =0;
+                                state_reg = idle;
+                            end
+                        end     
 		        endcase //end case (state_reg)
 		    end //end else
 	end //end always

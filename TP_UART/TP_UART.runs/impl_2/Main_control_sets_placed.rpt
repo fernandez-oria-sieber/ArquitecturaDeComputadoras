@@ -1,0 +1,85 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2.2 (lin64) Build 2348494 Mon Oct  1 18:25:39 MDT 2018
+| Date         : Mon Feb 11 21:31:37 2019
+| Host         : sieber running 64-bit Ubuntu 18.04.2 LTS
+| Command      : report_control_sets -verbose -file Main_control_sets_placed.rpt
+| Design       : Main
+| Device       : xc7a35t
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    17 |
+| Unused register locations in slices containing registers |    32 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      8 |            3 |
+|     10 |            3 |
+|     12 |            1 |
+|     14 |            2 |
+|    16+ |            8 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              14 |            6 |
+| No           | No                    | Yes                    |              32 |            7 |
+| No           | Yes                   | No                     |              14 |            2 |
+| Yes          | No                    | No                     |              36 |           10 |
+| Yes          | No                    | Yes                    |             132 |           29 |
+| Yes          | Yes                   | No                     |              36 |           12 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+----------------------------+--------------------------+------------------+----------------+
+|  Clock Signal  |        Enable Signal       |     Set/Reset Signal     | Slice Load Count | Bel Load Count |
++----------------+----------------------------+--------------------------+------------------+----------------+
+|  clk_IBUF_BUFG | tx_mod/s_next              | reset_IBUF               |                2 |              8 |
+|  clk_IBUF_BUFG | int_tx/tx_start_aux4_out   |                          |                3 |              8 |
+|  clk_IBUF_BUFG | rx_mod/s_next              | reset_IBUF               |                2 |              8 |
+|  clk_IBUF_BUFG | int_tx/aux                 | int_tx/aux[7]_i_1_n_0    |                3 |             10 |
+|  clk_IBUF_BUFG | int_tx/tx_start_aux4_out   | int_tx/salida[7]_i_1_n_0 |                1 |             10 |
+|  clk_IBUF_BUFG | rx_mod/op_reg[5][0]        | reset_IBUF               |                3 |             10 |
+|  clk_IBUF_BUFG | int_tx/div[5]_i_1_n_0      |                          |                3 |             12 |
+|  clk_IBUF_BUFG |                            | br_g/ciclos[7]_i_1_n_0   |                2 |             14 |
+|  clk_IBUF_BUFG |                            |                          |                6 |             14 |
+|  clk_IBUF_BUFG | rx_mod/E[0]                | reset_IBUF               |                4 |             16 |
+|  clk_IBUF_BUFG | rx_mod/second_op_reg[7][0] | reset_IBUF               |                5 |             16 |
+|  clk_IBUF_BUFG | rx_mod/b_next              | reset_IBUF               |                3 |             16 |
+|  clk_IBUF_BUFG | tx_mod/b_next_0            | reset_IBUF               |                2 |             16 |
+|  clk_IBUF_BUFG | int_tx/dig_0               | int_tx/dig[7]_i_1_n_0    |                8 |             16 |
+|  clk_IBUF_BUFG | show_aux[7]_i_1_n_0        |                          |                4 |             16 |
+|  clk_IBUF_BUFG |                            | reset_IBUF               |                7 |             32 |
+|  clk_IBUF_BUFG | int_rx/aux[7]_i_1_n_0      | reset_IBUF               |                8 |             42 |
++----------------+----------------------------+--------------------------+------------------+----------------+
+
+
