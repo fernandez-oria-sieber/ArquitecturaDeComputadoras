@@ -10,7 +10,7 @@ module rx_interface
 	   input wire [7:0] dout,
 	   output wire [7:0] A, B,
 	   output wire [5:0] Op,
-	   output reg rx_empty
+	   output reg rx_empty // Es 1 cuando llega una 'd', else 0
 	);
 	
 	// symbolic state declaration
@@ -40,7 +40,7 @@ module rx_interface
                 aux <= 48; // aux, aux1 y aux2 los inicializamos en 0 (ascii=48)
                 aux1 <= 48;
                 aux2 <= 48;
-                rx_empty = 1'b0;
+                rx_empty <= 1'b0;
             end
         else
             begin
@@ -94,10 +94,16 @@ module rx_interface
                   transmit :
                       begin
                           rx_empty = 1'b1;
-                          if (rd) 
+                          if (rd) // Es 1 cuando tx_interface termina de transmitir, else 0
                             begin
                                 state_reg = idle ;
                                 rx_empty = 1'b0;
+                                first_op = 0;
+                                second_op = 0;
+                                op = 0;
+                                aux = 48; // aux, aux1 y aux2 los inicializamos en 0 (ascii=48)
+                                aux1 = 48;
+                                aux2 = 48;
                             end
                       end 
 		        endcase //end case (state_reg)
