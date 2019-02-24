@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module rx_interface
+module interface
 	#(
 	   parameter DBIT = 8			// # data bits
 	   // SB_TICK = 16		// # ticks for stop bits
@@ -83,8 +83,7 @@ module rx_interface
                                 end
                             100: state_reg = transmit; //100: 'd' en ascii (done)
                             default: // Actualizo los numeros que voy ingresando
-                            //TODO VERIFICAR QUE NO SE MANDEN LETRAS EN 'aux'
-                            begin
+                                begin
                                     aux2 <= aux1;//se púede hacer mejor x10
                                     aux1 <= aux; 
                                     aux  <= dout;

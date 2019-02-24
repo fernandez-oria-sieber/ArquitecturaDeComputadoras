@@ -57,12 +57,12 @@ module tx_interface
                             dig = aux / div;    // divido para obtener el digito a transmitir (ej, 123/100 - obtengo 1 en it. 1)
                             div = div / 10;     // Divido por 10 para en la sig iteración obtener el sig digito (100/10=10)
                             if(dig || zflag == 1) state_reg = transmit; // Entro si dig != 0 ó zflag = 1 si ya transmiti un valor y tengo que mandar un 0
-                        end      
+                        end
                     transmit :
                        begin
                           salida = dig+48; // Sumo 48 al digito enviado para transmitir en ascii
-                          tx_start_aux = 1'b1; 
-                          if (tx_done_tick) 
+                          tx_start_aux = 1'b1;
+                          if (tx_done_tick)
                             begin
                                 zflag= 1'b1;
                                 state_reg = operate ;
@@ -82,7 +82,7 @@ module tx_interface
                         end 
                     transmit_reset :
                        begin
-                          salida = 10; // salto de linea en ascii (reset)
+                          salida = 13; // enter en ascii (reset)
                           
                           tx_start_aux = 1'b1; 
                           if (tx_done_tick) 

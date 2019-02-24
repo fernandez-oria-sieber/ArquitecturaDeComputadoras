@@ -2,723 +2,89 @@
 # Vivado v2018.2.2 (64-bit)
 # SW Build 2348494 on Mon Oct  1 18:25:39 MDT 2018
 # IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
-# Start of session at: Tue Dec 18 11:33:56 2018
-# Process ID: 9491
+# Start of session at: Tue Feb 19 20:15:04 2019
+# Process ID: 31052
 # Current directory: /home/sieber/Arquitecura/Arquitectura2018
 # Command line: vivado
 # Log file: /home/sieber/Arquitecura/Arquitectura2018/vivado.log
 # Journal file: /home/sieber/Arquitecura/Arquitectura2018/vivado.jou
 #-----------------------------------------------------------
 start_gui
+open_project /home/sieber/Arquitecura/Arquitectura2018/TP_BIP/TP_BIP.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 6097.395 ; gain = 102.023 ; free physical = 3127 ; free virtual = 13863
 open_project /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.xpr
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 6138.785 ; gain = 23.383 ; free physical = 3040 ; free virtual = 13805
 update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-add_files -fileset sim_1 -norecurse /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim_tx.v
-update_compile_order -fileset sim_1
-set_property top interfaceTestTx [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-update_compile_order -fileset sim_1
-move_files [get_files  /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/Main.v]
-set_property top Main [current_fileset]
+current_project TP_BIP
+import_files -norecurse {/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_module.v /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v}
 update_compile_order -fileset sources_1
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'interfaceTestTx' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj interfaceTestTx_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim_tx.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module interfaceTestTx
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto a87186fc4e034a1392b170a9571dd125 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interfaceTestTx_behav xil_defaultlib.interfaceTestTx xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-ERROR: [VRFC 10-529] concurrent assignment to a non-net tx_start is not permitted [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim_tx.v:10]
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-99] Step results log file:'/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/elaborate.log'
-ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/elaborate.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-reset_run synth_1
-launch_runs impl_1 -jobs 2
-[Tue Dec 18 12:14:53 2018] Launched synth_1...
-Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/runme.log
-[Tue Dec 18 12:14:53 2018] Launched impl_1...
-Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/impl_1/runme.log
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'interfaceTestTx' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj interfaceTestTx_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim_tx.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module interfaceTestTx
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto a87186fc4e034a1392b170a9571dd125 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interfaceTestTx_behav xil_defaultlib.interfaceTestTx xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.tx_interface
-Compiling module xil_defaultlib.interfaceTestTx
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot interfaceTestTx_behav
-
-****** Webtalk v2018.2.2 (64-bit)
-  **** SW Build 2348494 on Mon Oct  1 18:25:39 MDT 2018
-  **** IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
-    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
-
-source /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/xsim.dir/interfaceTestTx_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/xsim.dir/interfaceTestTx_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Dec 18 12:17:19 2018. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2018.2/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Tue Dec 18 12:17:19 2018...
-run_program: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 6428.250 ; gain = 0.000 ; free physical = 1106 ; free virtual = 7557
-INFO: [USF-XSim-69] 'elaborate' step finished in '10' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "interfaceTestTx_behav -key {Behavioral:sim_1:Functional:interfaceTestTx} -tclbatch {interfaceTestTx.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-source interfaceTestTx.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'interfaceTestTx_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 6489.059 ; gain = 60.809 ; free physical = 1059 ; free virtual = 7527
-export_ip_user_files -of_objects  [get_files /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim1.v] -no_script -reset -force -quiet
-remove_files  -fileset sim_1 /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim1.v
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-add_files -fileset sim_1 -norecurse /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim.v
-update_compile_order -fileset sim_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v w ]
-add_files -fileset sim_1 /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v
-update_compile_order -fileset sim_1
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-[Tue Dec 18 13:11:56 2018] Launched synth_1...
-Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/runme.log
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-close_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 6651.176 ; gain = 0.000 ; free physical = 729 ; free virtual = 7510
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-[Tue Dec 18 13:17:17 2018] Launched synth_1...
-Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/runme.log
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-[Tue Dec 18 13:20:37 2018] Launched synth_1...
-Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/runme.log
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-[Tue Dec 18 13:26:13 2018] Launched synth_1...
-Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/runme.log
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-[Tue Dec 18 13:31:25 2018] Launched synth_1...
-Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/runme.log
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-[Tue Dec 18 13:33:18 2018] Launched synth_1...
-Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/runme.log
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-[Tue Dec 18 13:35:18 2018] Launched synth_1...
-Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/runme.log
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'interfaceTestTx' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj interfaceTestTx_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/sim_tx.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module interfaceTestTx
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto a87186fc4e034a1392b170a9571dd125 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot interfaceTestTx_behav xil_defaultlib.interfaceTestTx xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.tx_interface
-Compiling module xil_defaultlib.interfaceTestTx
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot interfaceTestTx_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "interfaceTestTx_behav -key {Behavioral:sim_1:Functional:interfaceTestTx} -tclbatch {interfaceTestTx.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-source interfaceTestTx.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'interfaceTestTx_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 6968.109 ; gain = 47.812 ; free physical = 690 ; free virtual = 7254
-set_property top allTest [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-update_compile_order -fileset sim_1
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj allTest_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module br_generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_module.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_module
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_module
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module allTest
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto a87186fc4e034a1392b170a9571dd125 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot allTest_behav xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-ERROR: [VRFC 10-529] concurrent assignment to a non-net s_tick is not permitted [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:12]
-ERROR: [VRFC 10-529] concurrent assignment to a non-net rx_done_tick is not permitted [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:13]
-ERROR: [VRFC 10-529] concurrent assignment to a non-net rx_empty is not permitted [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:14]
-ERROR: [VRFC 10-529] concurrent assignment to a non-net leds is not permitted [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:15]
-ERROR: [VRFC 10-529] concurrent assignment to a non-net tx_start is not permitted [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:16]
-ERROR: [VRFC 10-529] concurrent assignment to a non-net tx_done_tick is not permitted [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:17]
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-INFO: [USF-XSim-99] Step results log file:'/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/elaborate.log'
-ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/elaborate.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj allTest_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module br_generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_module.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_module
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_module
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module allTest
-ERROR: [VRFC 10-1280] procedural assignment to a non-register rx is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:27]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:30]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:31]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:32]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:34]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:35]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:36]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:37]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:38]
-ERROR: [VRFC 10-2787] module allTest ignored due to previous errors [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:3]
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-99] Step results log file:'/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/xvlog.log'
-ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/xvlog.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj allTest_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module br_generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_module.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_module
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_module
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module allTest
-ERROR: [VRFC 10-1280] procedural assignment to a non-register rx is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:27]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:30]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:31]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:32]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:33]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:34]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:35]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:36]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:37]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register dout is not permitted, left-hand side should be reg/integer/time/genvar [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:38]
-ERROR: [VRFC 10-2787] module allTest ignored due to previous errors [/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v:3]
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-99] Step results log file:'/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/xvlog.log'
-ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/xvlog.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-[Tue Dec 18 15:22:18 2018] Launched synth_1...
-Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/runme.log
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj allTest_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module br_generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_module.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_module
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_module
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module allTest
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto a87186fc4e034a1392b170a9571dd125 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot allTest_behav xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.br_generator
-Compiling module xil_defaultlib.rx_module
-Compiling module xil_defaultlib.rx_interface
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.tx_interface
-Compiling module xil_defaultlib.tx_module
-Compiling module xil_defaultlib.allTest
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot allTest_behav
-
-****** Webtalk v2018.2.2 (64-bit)
-  **** SW Build 2348494 on Mon Oct  1 18:25:39 MDT 2018
-  **** IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
-    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
-
-source /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/xsim.dir/allTest_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim/xsim.dir/allTest_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Dec 18 15:23:13 2018. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2018.2/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Tue Dec 18 15:23:13 2018...
-run_program: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 7024.145 ; gain = 0.000 ; free physical = 648 ; free virtual = 7242
-INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "allTest_behav -key {Behavioral:sim_1:Functional:allTest} -tclbatch {allTest.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-source allTest.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'allTest_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 7071.973 ; gain = 47.828 ; free physical = 637 ; free virtual = 7237
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 7071.996 ; gain = 0.000 ; free physical = 576 ; free virtual = 7193
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj allTest_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_module
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module allTest
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto a87186fc4e034a1392b170a9571dd125 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot allTest_behav xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.rx_interface
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.tx_interface
-Compiling module xil_defaultlib.tx_module
-Compiling module xil_defaultlib.allTest
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot allTest_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "allTest_behav -key {Behavioral:sim_1:Functional:allTest} -tclbatch {allTest.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-source allTest.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'allTest_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-relaunch_sim
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj allTest_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_module
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module allTest
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto a87186fc4e034a1392b170a9571dd125 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot allTest_behav xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.rx_interface
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.tx_interface
-Compiling module xil_defaultlib.tx_module
-Compiling module xil_defaultlib.allTest
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot allTest_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-relaunch_sim
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj allTest_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module br_generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_module
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module allTest
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto a87186fc4e034a1392b170a9571dd125 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot allTest_behav xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.br_generator
-Compiling module xil_defaultlib.rx_interface
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.tx_interface
-Compiling module xil_defaultlib.tx_module
-Compiling module xil_defaultlib.allTest
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot allTest_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 7073.164 ; gain = 0.000 ; free physical = 511 ; free virtual = 7114
-relaunch_sim
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj allTest_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/br_generator.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module br_generator
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_module.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_module
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module allTest
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto a87186fc4e034a1392b170a9571dd125 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot allTest_behav xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.br_generator
-Compiling module xil_defaultlib.rx_interface
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.tx_interface
-Compiling module xil_defaultlib.tx_module
-Compiling module xil_defaultlib.allTest
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot allTest_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 7075.180 ; gain = 0.000 ; free physical = 470 ; free virtual = 7077
-relaunch_sim
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj allTest_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module allTest
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto a87186fc4e034a1392b170a9571dd125 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot allTest_behav xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.rx_interface
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.tx_interface
-Compiling module xil_defaultlib.allTest
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot allTest_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-relaunch_sim
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'allTest' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-xvlog --incr --relax -prj allTest_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_interface
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module allTest
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto a87186fc4e034a1392b170a9571dd125 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot allTest_behav xil_defaultlib.allTest xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.rx_interface
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.tx_interface
-Compiling module xil_defaultlib.allTest
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot allTest_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/Test_Top.v w ]
-add_files -fileset sim_1 /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/Test_Top.v
-update_compile_order -fileset sim_1
-reset_run synth_1
-launch_runs impl_1 -jobs 2
-[Tue Dec 18 17:30:15 2018] Launched synth_1...
-Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/synth_1/runme.log
-[Tue Dec 18 17:30:15 2018] Launched impl_1...
-Run output will be captured here: /home/sieber/Arquitecura/Arquitectura2018/TP_UART/TP_UART.runs/impl_1/runme.log
-open_hw
-close_hw
-open_run impl_1
-INFO: [Netlist 29-17] Analyzing 63 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2018.2.2
-INFO: [Device 21-403] Loading part xc7k70tfbv676-1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-Reading XDEF placement.
-Reading placer database...
-Reading XDEF routing.
-Read XDEF File: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 7289.477 ; gain = 0.000 ; free physical = 945 ; free virtual = 6909
-Restored from archive | CPU: 0.040000 secs | Memory: 0.584747 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 7289.477 ; gain = 0.000 ; free physical = 945 ; free virtual = 6909
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-open_run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 7432.016 ; gain = 318.586 ; free physical = 860 ; free virtual = 6825
-WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
-close_design
+current_project TP_UART
+current_project TP_BIP
+update_compile_order -fileset sources_1
+current_project TP_UART
+close_project
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+create_project TP3_BIP /home/sieber/Arquitecura/Arquitectura2018/TP3_BIP -part xc7k70tfbg676-2
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+set_property target_language VHDL [current_project]
+instantiate_example_design -template xilinx.com:design:cpu_netlist:1.0
+INFO: [Vivado 12-3498] Setting project source management mode (property SOURCE_MGMT_MODE) to "None".
+INFO: [Vivado 12-3458] The update_compile_order command is not intended for use in the GUI, where compile order updates occur based on project changes and the hierarchy update settings. No update performed.
+INFO: [Vivado 12-3458] The update_compile_order command is not intended for use in the GUI, where compile order updates occur based on project changes and the hierarchy update settings. No update performed.
+close_project
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+create_project TP3_BIP /home/sieber/Arquitecura/Arquitectura2018/TP3_BIP -part xc7k70tfbg676-2
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+set_property target_language VHDL [current_project]
+instantiate_example_design -template xilinx.com:design:cpu_hdl:1.0
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sim_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+INFO: [Vivado 12-3458] The update_compile_order command is not intended for use in the GUI, where compile order updates occur based on project changes and the hierarchy update settings. No update performed.
+INFO: [Vivado 12-3458] The update_compile_order command is not intended for use in the GUI, where compile order updates occur based on project changes and the hierarchy update settings. No update performed.
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_project
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 18 17:54:58 2018...
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 19 21:51:52 2019...
