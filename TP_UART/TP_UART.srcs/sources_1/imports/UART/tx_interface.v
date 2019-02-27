@@ -57,7 +57,7 @@ module tx_interface
                                 begin
                                     state_reg = operate;
                                     tx_start_aux = 1'b0;
-                                    aux = abs(aux);
+                                    aux = - aux;
                                 end
                         end
                     operate :
