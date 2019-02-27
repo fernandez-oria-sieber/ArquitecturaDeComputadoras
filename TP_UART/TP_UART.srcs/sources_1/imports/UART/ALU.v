@@ -5,11 +5,11 @@ module ALU #(parameter size = 8)
 		input[5:0] Op,
 		input signed[size-1:0] A,
 		input signed[size-1:0] B,
-		output[size-1:0] Leds
+		output signed [size-1:0] Leds
 	);	
 	
 	// signal declaration
-	reg[size-1:0] aux;
+	reg signed [size-1:0] aux;
 	reg wr_aux, rd_aux, state_reg , state_next;
 	
 	assign Leds = aux; // Resultado de la ALU
