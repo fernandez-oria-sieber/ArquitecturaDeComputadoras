@@ -5,28 +5,30 @@
 //					        Braian Sieber
 // Create Date:    		09:03:26 09/11/2018 
 //////////////////////////////////////////////////////////////////////////////////
-module top_level #(parameter size = 8) //FALTA TODO
+module UART #(parameter size = 8) //FALTA TODO
 	(
-	input rx, clk, reset,
-	output tx
+	input rx, clk, reset, finish_program,
+	input [31:0] out_Acc_Counter,
+	output tx, BIP_enable
     );
 	 
-	 wire signed[size-1:0] a, b; 
-	 wire [size-1:0] dout, leds, d_in;
+	 wire signed[size-1:0] din; 
+	 wire [size-1:0] dout, d_in;
 	 wire [5:0] op;
 	 wire rx_empty, wr, s_tick, rx_done_tick, rd, tx_done_tick, tx_start;
 	 
 	 
 	 br_generator br_g (clk, s_tick);
 	 
-	 rx_module #(.DBIT(size), .SB_TICK(16)) rx_mod (.clk(clk), .reset(reset), .rx(rx), .s_tick(s_tick), .rx_done_tick(rx_done_tick),.dout(dout));
+	 rx_module #(.DBIT(size), .SB_TICK(16)) rx_mod (.clk(clk), .reset(reset), .rx(rx), .s_tick(s_tick),
+	             .rx_done_tick(rx_done_tick),.dout(dout));
 	 
-	 interface #(.DBIT(size)) int (clk, reset,rx_done_tick, rd, dout, a, b, op, rx_empty);
+	 tx_module #(.DBIT(size), .SB_TICK(16)) tx_mod (clk, reset, tx_start , s_tick, din, tx_done_tick , tx);
 	 
-	 //ALU #(.size(size)) alu ( .clk(clk), .Op(op), .A(a), .B(b), .Leds(leds));
+	 interface #(.DBIT(size)) int (clk, reset,rx_done_tick, rd, finish_program, tx_done_tick, 
+	                               dout, out_Acc_Counter, din, BIP_enable, tx_start);
      
-     //tx_interface #(.DBIT(size)) int_tx (clk, reset, tx_done_tick, rx_empty, leds, d_in, tx_start, rd);
      
-     tx_module #(.DBIT(size), .SB_TICK(16)) tx_mod (clk, reset, tx_start , s_tick, d_in, tx_done_tick , tx);
 	 
+           
 endmodule

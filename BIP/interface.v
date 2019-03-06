@@ -9,7 +9,6 @@ module interface
 	   input wire [7:0] dout,
 	   input wire [31:0] out_Acc_Count,
 	   output wire [7:0] din,
-	   output reg rx_empty, // Es 1 cuando llega una 'd', else 0
 	   output wire BIP_enable, tx_start
 	);
 	
@@ -39,7 +38,6 @@ module interface
                 aux_Acc_Count <= 0; // aux lo inicializamos en 0
                 aux_Acc <= 0;
                 aux_Count <= 0;
-                rx_empty <= 1'b0;
                 is_s <= 0;
                 acc_sended <= 0;
                 out <= 0;

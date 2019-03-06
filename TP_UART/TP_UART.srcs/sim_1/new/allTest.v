@@ -55,11 +55,18 @@ module allTest;
                     #20 rx_done_tick = 0;           // #380
                     rx_done_tick = 1;
                     #20 rx_done_tick = 0;           // #430
+                    //#20 rx_empty = 1;
                     #20 tx_done_tick = 1;
                     #20 tx_done_tick = 0;
                     #20 tx_done_tick = 1;
                     #20 tx_done_tick = 0;
                     #20 tx_done_tick = 1;
                     #20 tx_done_tick = 0;
+                    #20 tx_done_tick = 1;
+                    #20 tx_done_tick = 0;
+                    #20 tx_done_tick = 1;
+                    #20 tx_done_tick = 0;
+                    #20 tx_done_tick = 1;
+                    #20 tx_done_tick = 0;                    
         end
 endmodule

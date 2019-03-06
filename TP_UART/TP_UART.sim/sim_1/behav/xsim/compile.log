@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/rx_interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_interface
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sources_1/imports/UART/tx_interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_interface
+INFO: [VRFC 10-2263] Analyzing Verilog file "/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/sim_1/new/allTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module allTest
