@@ -34,7 +34,7 @@ module CPU(
     wire SetB, WrAcc, Op;
     
     
-    ControlUnit control(BIP_enable, clk, reset, Opcode, SetA, SetB,
+    ControlUnit control(clk, reset, BIP_enable, Opcode, SetA, SetB,
                         WrAcc,Op, WrRAM, RdRAM, PC);
                         
     Datapath datapath(clk, reset, Data_Val, Out_Data, SetA, SetB, WrAcc,

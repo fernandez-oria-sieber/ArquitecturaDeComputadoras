@@ -7,7 +7,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module ControlUnit
 	(
-	input BIP_enable, clk, reset,
+	input clk, reset, BIP_enable,
 	input [4:0] Opcode,
     output [1:0] SetA,
     output SetB,
@@ -23,9 +23,11 @@ module ControlUnit
      
      Decoder deco(Opcode,WrPc,SetA,SetB,WrAcc,Op,WrRAM,RdRAM);
      
-     always @(posedge clk , posedge reset)
+     always @(posedge clk, posedge reset)
          begin
              if (BIP_enable) aux_PC = aux_PC + WrPc; 
+             else aux_PC = aux_PC;
+             if (reset) aux_PC = 0;
          end
      
      
