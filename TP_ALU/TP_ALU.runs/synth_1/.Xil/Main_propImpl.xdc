@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/sieber/Arquitecura/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc rfile:../../../TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc rfile:../../../TP_ALU.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W5 [get_ports clk]
 set_property src_info {type:XDC file:1 line:12 export:INPUT save:INPUT read:READ} [current_design]

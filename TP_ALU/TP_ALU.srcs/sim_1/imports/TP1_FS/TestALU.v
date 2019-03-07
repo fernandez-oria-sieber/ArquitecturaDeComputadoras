@@ -26,7 +26,6 @@ module TestALU;
 		
 
 		// Wait 100 ns for global reset to finish
-        #100;  
 		// Add stimulus here
 		A=7;
 		#25;
@@ -50,7 +49,9 @@ module TestALU;
 		A=7; 
 		Op=39; //nor
 		#50;
-		
+		B=9;
+		Op=34;
+		#50;
 		
 		
 	end
