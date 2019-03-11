@@ -8,15 +8,15 @@
 module Main #(parameter size = 8)
     (
         input rx, clk, reset,
-        output tx
+        output tx, osciloscopio
     );
 	 
 	wire signed[size-1:0] a, b, d_in; 
 	wire [size-1:0] dout, leds;
 	wire [5:0] op;
 	wire rx_empty, wr, s_tick, rx_done_tick, tx_done_tick;
-	wire tx_start, rd;
-	
+	wire tx_start, rd;//, osciloscopio;
+	assign osciloscopio = rx;
 	
 	br_generator br_g (clk, s_tick);
 

@@ -205,8 +205,8 @@ set_property PACKAGE_PIN T18 [get_ports reset]
 
 #Pmod Header JXADC
 #Sch name = XA1_P
-#set_property PACKAGE_PIN J3 [get_ports {vauxp6}]				
-#set_property IOSTANDARD LVCMOS33 [get_ports {vauxp6}]
+set_property PACKAGE_PIN J3 [get_ports {osciloscopio}]				
+set_property IOSTANDARD LVCMOS33 [get_ports {osciloscopio}]
 #Sch name = XA2_P
 #set_property PACKAGE_PIN L3 [get_ports {vauxp14}]				
 #set_property IOSTANDARD LVCMOS33 [get_ports {vauxp14}]

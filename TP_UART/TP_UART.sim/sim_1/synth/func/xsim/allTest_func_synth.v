@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-// Date        : Wed Feb 27 18:45:05 2019
+// Date        : Sun Mar 10 23:29:05 2019
 // Host        : lenovo running 64-bit Manjaro Linux
 // Command     : write_verilog -mode funcsim -nolib -force -file
 //               /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.sim/sim_1/synth/func/xsim/allTest_func_synth.v

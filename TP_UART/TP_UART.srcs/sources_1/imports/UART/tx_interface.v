@@ -27,7 +27,7 @@ module tx_interface
 	reg signed [7:0] aux;
 	reg [7:0] dig, salida;
 	reg [6:0] div,i; //puede ser integer también, pero así no da warning
-	
+	reg el_lucho_tristisimo;
 	// body
 	// FSMD next-state logic
 	always @(posedge clk , posedge reset)
