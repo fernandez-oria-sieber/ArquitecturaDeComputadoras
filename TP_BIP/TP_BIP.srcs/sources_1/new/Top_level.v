@@ -26,14 +26,16 @@ module Top_level(
     );
 
 wire BIP_enable, finish_program, WrRAM, RdRAM;
-wire[10:0] PC;
+wire[10:0] PC, Addr;
 wire[15:0] Program_Data, In_Data, Out_Data;
 wire[31:0] out_Acc_Counter;
    
 UART uart(rx, clk, reset, finish_program, out_Acc_Counter, tx, BIP_enable);    
-Memory Data_memory (.Rd(RdRAM), .Wr(WrRAM), .Addr(Program_Data), .In_Data(In_Data), .Out_Data(Out_Data));
-Memory Program_memory (1, 0, PC, 0, Program_Data);
-CPU bip(BIP_enable, clk, reset, Program_Data, Out_Data, In_Data, PC, WrRAM, RdRAM);
+sinc_memory #(.INIT_FILE("")) Data_memory(.Rd(RdRAM), .Wr(WrRAM),.clk(clk),.ena(BIP_enable), .Addr(Addr), .In_Data(In_Data), .Out_Data(Out_Data));
+sinc_memory #(.INIT_FILE("")) Program_memory (1, 0, clk, BIP_enable, PC, 0, Program_Data);
+CPU bip(BIP_enable, clk, reset, Program_Data, Out_Data, In_Data, PC, WrRAM, RdRAM, finish_program);
 
+
+assign Addr = Program_data[10:0];
 
 endmodule
