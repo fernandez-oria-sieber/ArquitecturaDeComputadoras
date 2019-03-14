@@ -83,7 +83,8 @@ module rx_interface
                                 end
                             100: state_reg = transmit; //100: 'd' en ascii (done)
                             default: // Actualizo los numeros que voy ingresando
-                                begin
+                            //TODO VERIFICAR QUE NO SE MANDEN LETRAS EN 'aux'
+                            begin
                                     aux2 <= aux1;//se púede hacer mejor x10
                                     aux1 <= aux; 
                                     aux  <= dout;

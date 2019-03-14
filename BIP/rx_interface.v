@@ -9,6 +9,7 @@ module interface
 	   input wire [7:0] dout,
 	   input wire [31:0] out_Acc_Count,
 	   output wire [7:0] din,
+	   output reg rx_empty, // Es 1 cuando llega una 'd', else 0
 	   output wire BIP_enable, tx_start
 	);
 	
@@ -38,6 +39,7 @@ module interface
                 aux_Acc_Count <= 0; // aux lo inicializamos en 0
                 aux_Acc <= 0;
                 aux_Count <= 0;
+                rx_empty <= 1'b0;
                 is_s <= 0;
                 acc_sended <= 0;
                 out <= 0;
@@ -71,11 +73,11 @@ module interface
                   idle_tx:
                     if(finish_program)  // Es 1 si termino el programa, else 0
                         begin
-                            state_reg = transmit;
-                            out = 65; // A en ascii
+                            state_reg = operate;
                             aux_BIP = 0;
                             aux_Count = out_Acc_Count[31:16];
-                            aux_Acc_Count = out_Acc_Count[15:0];
+                            aux_Acc = out_Acc_Count[15:0];
+                            aux_Acc_Count = aux_Acc;
                             div = 10000;
                         end
                   operate:
@@ -83,38 +85,52 @@ module interface
                         dig = aux_Acc_Count / div;    // divido para obtener el digito a transmitir (ej, 123/100 - obtengo 1 en it. 1)
                         div = div / 10;     // Divido por 10 para en la sig iteración obtener el sig digito (100/10=10)
                         if(dig || z_flag == 1) state_reg = transmit; // Entro si dig != 0 ó zflag = 1 si ya transmiti un valor y tengo que mandar un 0
-                        out = dig + 48; // Sumo 48 al digito enviado para transmitir en ascii
-                    end
+                    end 
                   transmit :
                       begin
+                         out = dig+48; // Sumo 48 al digito enviado para transmitir en ascii
                          tx_start_aux = 1'b1;
                          if (tx_done_tick)
                            begin
-                               if (out == 65 || out == 67) out = 58; // : en ascii
-                               else if (out == 58) out = 13; // enter en ascii
-                               else if (out == 13) state_reg = operate;
-                               else
-                                begin
-                                   z_flag= 1'b1;
-                                   state_reg = operate ;
-                                   tx_start_aux = 1'b0;
-                                   if (div == 0) // Resetamos todos los parametros
-                                       begin
-                                           z_flag = 1'b0;
-                                           div = 10000;
-                                           state_reg = transmit;
-                                           if (acc_sended==1) state_reg = idle_rx;
-                                           acc_sended = 1;
-                                           aux_Acc_Count = aux_Count;
-                                           out = 67; // C en ascii
-                                       end // if (div == 0)
-                                   else aux_Acc_Count = aux_Acc_Count % (div*10);
-                                end // else
-                           end// if (tx_done_tick)
-                       end  // transmit
+                               z_flag= 1'b1;
+                               state_reg = operate ;
+                               tx_start_aux = 1'b0;
+                               if (div == 0) // Resetamos todos los parametros y le decimos a rx_int que puede volver a recibir
+                                   begin
+                                       //rd_aux = 1'b1; // rx_int puede recibir
+                                       z_flag = 1'b0;
+                                       div = 10000;
+                                       if (acc_sended==1) state_reg = idle_rx;
+                                       acc_sended = 1;
+                                       out = 0;
+                                       dig = 0;
+                                       aux_Acc_Count = aux_Count;
+                                   end
+                               else aux_Acc_Count = aux_Acc_Count % (div*10);
+                           end
+                       end  
 		        endcase //end case (state_reg)
 		    end //end else
 	end //end always
+/*	
+           transmit_reset :
+              begin
+                 out = 13; // enter en ascii (reset)
+                 
+                 tx_start_aux = 1'b1; 
+                 if (tx_done_tick) 
+                   begin
+                       out = 0;
+                       rd_aux = 1'b0;
+                       zflag = 1'b0;
+                       tx_start_aux = 1'b0;
+                       dig = 0;
+                       aux =0;
+                       state_reg = idle;
+                   end
+               end     
+       endcase //end case (state_reg)
+*/
 
 	// output
 	assign BIP_enable = aux_BIP;
