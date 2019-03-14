@@ -33,6 +33,7 @@ module Datapath
     );
 	 
 	 //reg signed[size-1:0] a, b; 
+<<<<<<< HEAD
 	 reg[15:0] ACC, A, B, Inmediate_Val;//, SalidaALU_aux;
 	 wire[15:0] SalidaALU;
 	 reg [5:0]Operation;
@@ -41,6 +42,14 @@ module Datapath
 		if (WrAcc) ACC = A;
 		else ACC = ACC;
 	    if (reset) ACC = 0;
+=======
+	 reg[15:0] ACC, A, B, Inmediate_Val, SalidaALU;
+	 reg [5:0]Operation;
+	 always @(posedge clk, reset)
+	 begin
+		if (WrAcc) ACC = A;
+		
+>>>>>>> origin/develop
 	 end
 	 
 	 always @(*)
@@ -68,5 +77,8 @@ module Datapath
 	 ALU #(.size(16)) alu (.Op(Operation), .A(ACC), .B(B), .Leds(SalidaALU)); 
 	 
      assign In_Data = ACC;
+<<<<<<< HEAD
      //assign SalidaALU_aux = SalidaALU;
+=======
+>>>>>>> origin/develop
 endmodule

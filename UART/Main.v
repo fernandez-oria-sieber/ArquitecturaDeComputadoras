@@ -8,16 +8,37 @@
 module Main #(parameter size = 8)
     (
         input rx, clk, reset,
+<<<<<<< HEAD
         output tx, osciloscopio
+=======
+//        input b1, b2, b3, b4,
+        output tx,
+        output signed[size-1:0]show
+>>>>>>> origin/develop
     );
 	 
 	wire signed[size-1:0] a, b, d_in; 
 	wire [size-1:0] dout, leds;
 	wire [5:0] op;
 	wire rx_empty, wr, s_tick, rx_done_tick, tx_done_tick;
+<<<<<<< HEAD
 	wire tx_start, rd;//, osciloscopio;
 	assign osciloscopio = rx;
 	
+=======
+	wire tx_start, rd;
+//	reg [size-1:0] show_aux;
+    
+//    always @(posedge clk)
+//     begin
+//        if(b1 == 1) show_aux = a;
+//        if(b2 == 1) show_aux = b;
+//        if(b3 == 1) show_aux = d_in;
+//        if(b4 == 1) show_aux = leds;
+//     end
+
+//    assign show = show_aux;
+>>>>>>> origin/develop
 	br_generator br_g (clk, s_tick);
 
 	rx_module #(size, 16) rx_mod (clk, reset, rx, s_tick, rx_done_tick, dout);

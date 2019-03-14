@@ -25,7 +25,11 @@ module CPU(
     input [15:0] Data, Out_Data,
     output [15:0] In_Data,
     output [10:0] PC,
+<<<<<<< HEAD
     output WrRAM, RdRAM, finish_program
+=======
+    output WrRAM, RdRAM
+>>>>>>> origin/develop
     );
     
     wire[4:0] Opcode;
@@ -34,8 +38,13 @@ module CPU(
     wire SetB, WrAcc, Op;
     
     
+<<<<<<< HEAD
     ControlUnit control(clk, reset, BIP_enable, Opcode, SetA, SetB,
                         WrAcc,Op, WrRAM, RdRAM, PC, finish_program);
+=======
+    ControlUnit control(BIP_enable, clk, reset, Opcode, SetA, SetB,
+                        WrAcc,Op, WrRAM, RdRAM, PC);
+>>>>>>> origin/develop
                         
     Datapath datapath(clk, reset, Data_Val, Out_Data, SetA, SetB, WrAcc,
                       Op, In_Data);

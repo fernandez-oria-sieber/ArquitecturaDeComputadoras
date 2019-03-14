@@ -1,0 +1,744 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Mar 14 13:50:14 2019
+# Process ID: 15622
+# Current directory: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1
+# Command line: vivado -log Top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_level.tcl
+# Log file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/Top_level.vds
+# Journal file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source Top_level.tcl -notrace
+Command: synth_design -top Top_level -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 15674 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1250.031 ; gain = 82.805 ; free physical = 122 ; free virtual = 4354
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Top_level' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v:23]
+INFO: [Synth 8-6157] synthesizing module 'UART' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v:8]
+	Parameter size bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'br_generator' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/br_generator.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'br_generator' (1#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/br_generator.v:3]
+INFO: [Synth 8-6157] synthesizing module 'rx_module' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/rx_module.v:22]
+	Parameter DBIT bound to: 8 - type: integer 
+	Parameter SB_TICK bound to: 16 - type: integer 
+	Parameter idle bound to: 2'b00 
+	Parameter start bound to: 2'b01 
+	Parameter data bound to: 2'b10 
+	Parameter stop bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'rx_module' (2#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/rx_module.v:22]
+INFO: [Synth 8-6157] synthesizing module 'tx_module' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/tx_module.v:2]
+	Parameter DBIT bound to: 8 - type: integer 
+	Parameter SB_TICK bound to: 16 - type: integer 
+	Parameter idle bound to: 2'b00 
+	Parameter start bound to: 2'b01 
+	Parameter data bound to: 2'b10 
+	Parameter stop bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'tx_module' (3#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/tx_module.v:2]
+INFO: [Synth 8-6157] synthesizing module 'interface' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:3]
+	Parameter DBIT bound to: 8 - type: integer 
+	Parameter idle_rx bound to: 3'b000 
+	Parameter receive bound to: 3'b001 
+	Parameter idle_tx bound to: 3'b010 
+	Parameter operate bound to: 3'b011 
+	Parameter transmit bound to: 3'b100 
+WARNING: [Synth 8-151] case item 3'b100 is unreachable [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:88]
+WARNING: [Synth 8-6014] Unused sequential element aux_Acc_reg was removed.  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:39]
+WARNING: [Synth 8-6014] Unused sequential element aux_Count_reg was removed.  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:40]
+WARNING: [Synth 8-6014] Unused sequential element acc_sended_reg was removed.  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:42]
+WARNING: [Synth 8-6014] Unused sequential element dig_reg was removed.  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:45]
+WARNING: [Synth 8-5788] Register div_reg in module interface is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:79]
+WARNING: [Synth 8-3848] Net tx_start_aux in module/entity interface does not have driver. [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'interface' (4#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/interface.v:3]
+WARNING: [Synth 8-3848] Net rd in module/entity UART does not have driver. [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'UART' (5#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/imports/UART/Main.v:8]
+INFO: [Synth 8-6157] synthesizing module 'sinc_memory' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+	Parameter RAM_WIDTH bound to: 16 - type: integer 
+	Parameter RAM_DEPTH bound to: 2048 - type: integer 
+	Parameter INIT_FILE bound to: (null) - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'sinc_memory' (6#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/sinc_memory.v:23]
+INFO: [Synth 8-6157] synthesizing module 'CPU' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [Synth 8-6157] synthesizing module 'Decoder' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Decoder' (7#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Decoder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (8#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:8]
+INFO: [Synth 8-6157] synthesizing module 'Datapath' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [Synth 8-226] default block is never used [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:57]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+	Parameter size bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (9#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Datapath' (10#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'CPU' (11#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/CPU.v:23]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net out_Acc_Counter[0] with 1st driver pin 'Top_level:/bip/In_Data[0]' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v:33]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net out_Acc_Counter[0] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v:33]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net out_Acc_Counter[0] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'Top_level' (12#1) [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Top_level.v:23]
+WARNING: [Synth 8-3331] design sinc_memory has unconnected port Rd
+WARNING: [Synth 8-3331] design interface has unconnected port tx_start
+WARNING: [Synth 8-3331] design interface has unconnected port rd
+WARNING: [Synth 8-3331] design interface has unconnected port tx_done_tick
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[31]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[30]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[29]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[28]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[27]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[26]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[25]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[24]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[23]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[22]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[21]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[20]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[19]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[18]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[17]
+WARNING: [Synth 8-3331] design interface has unconnected port out_Acc_Count[16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.656 ; gain = 127.430 ; free physical = 180 ; free virtual = 4360
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.656 ; gain = 127.430 ; free physical = 180 ; free virtual = 4361
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.656 ; gain = 127.430 ; free physical = 180 ; free virtual = 4361
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+Finished Parsing XDC File [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_UART/TP_UART.srcs/constrs_1/imports/Arquitectura2018/basys3_constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_level_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1619.984 ; gain = 0.000 ; free physical = 131 ; free virtual = 4112
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 204 ; free virtual = 4186
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 205 ; free virtual = 4187
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 206 ; free virtual = 4188
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "tick" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'rx_module'
+INFO: [Synth 8-5544] ROM "rx_done_tick" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "s_next" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "n_next" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'tx_module'
+INFO: [Synth 8-5544] ROM "tx_done_tick" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "s_next" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "n_next" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "is_s" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Output" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.srcs/sources_1/imports/TP1_FS/ALU.v:32]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+                   start |                               01 |                               01
+                    data |                               10 |                               10
+                    stop |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'rx_module'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+                   start |                               01 |                               01
+                    data |                               10 |                               10
+                    stop |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'tx_module'
+WARNING: [Synth 8-327] inferring latch for variable 'A_reg' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:52]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:39 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 195 ; free virtual = 4180
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     16 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 2     
++---XORs : 
+	   2 Input     16 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 3     
+	               14 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---RAMs : 
+	              32K Bit         RAMs := 2     
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     14 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 2     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   4 Input      4 Bit        Muxes := 2     
+	   4 Input      3 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 5     
+	   3 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 7     
+	   4 Input      1 Bit        Muxes := 18    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module br_generator 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module rx_module 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 5     
+Module tx_module 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 6     
+Module interface 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   4 Input     14 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   3 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 5     
+Module sinc_memory 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---RAMs : 
+	              32K Bit         RAMs := 1     
+Module Decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+Module ControlUnit 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     16 Bit       Adders := 1     
++---XORs : 
+	   2 Input     16 Bit         XORs := 1     
+Module Datapath 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "br_g/tick" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "int/is_s" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[31]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[30]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[29]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[28]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[27]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[26]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[25]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[24]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[23]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[22]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[21]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[20]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[19]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[18]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[17]
+WARNING: [Synth 8-3331] design UART has unconnected port out_Acc_Counter[16]
+INFO: [Synth 8-5784] Optimized 16 bits of RAM "Data_memory/ram_name_reg" due to constant propagation. Old ram width 16 bits, new ram width 0 bits.
+WARNING: [Synth 8-5785] Removed RAM "Data_memory/ram_name_reg" due to constant propagation. Write data stuck at zero 
+warning: Removed RAM Program_memory/ram_name_reg due to inactive write enable
+WARNING: [Synth 8-6014] Unused sequential element Program_memory/ram_name_reg was removed. 
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[31]' (FDCE) to 'uart/int/aux_Acc_Count_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/int/z_flag_reg )
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[14]' (FDE) to 'i_17/Program_memory/ram_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[10]' (FDE) to 'i_17/Program_memory/ram_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[9]' (FDE) to 'i_17/Program_memory/ram_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[8]' (FDE) to 'i_17/Program_memory/ram_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[7]' (FDE) to 'i_17/Program_memory/ram_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[6]' (FDE) to 'i_17/Program_memory/ram_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[5]' (FDE) to 'i_17/Program_memory/ram_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[4]' (FDE) to 'i_17/Program_memory/ram_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[3]' (FDE) to 'i_17/Program_memory/ram_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[2]' (FDE) to 'i_17/Program_memory/ram_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[1]' (FDE) to 'i_17/Program_memory/ram_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[0]' (FDE) to 'i_17/Program_memory/ram_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[15]' (FDE) to 'i_17/Program_memory/ram_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[13]' (FDE) to 'i_17/Program_memory/ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'i_17/Program_memory/ram_data_reg[12]' (FDE) to 'i_17/Program_memory/ram_data_reg[11]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_17/\Program_memory/ram_data_reg[11] )
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[0]' (FDCE) to 'uart/int/aux_Acc_Count_reg[1]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[1]' (FDCE) to 'uart/int/aux_Acc_Count_reg[2]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[2]' (FDCE) to 'uart/int/aux_Acc_Count_reg[3]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[3]' (FDCE) to 'uart/int/aux_Acc_Count_reg[4]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[4]' (FDCE) to 'uart/int/aux_Acc_Count_reg[5]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[5]' (FDCE) to 'uart/int/aux_Acc_Count_reg[6]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[6]' (FDCE) to 'uart/int/aux_Acc_Count_reg[7]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[7]' (FDCE) to 'uart/int/aux_Acc_Count_reg[8]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[8]' (FDCE) to 'uart/int/aux_Acc_Count_reg[9]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[9]' (FDCE) to 'uart/int/aux_Acc_Count_reg[10]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[10]' (FDCE) to 'uart/int/aux_Acc_Count_reg[11]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[11]' (FDCE) to 'uart/int/aux_Acc_Count_reg[12]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[12]' (FDCE) to 'uart/int/aux_Acc_Count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[13]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[15]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[16]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[17]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[18]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[19]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[20]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[21]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[22]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[23]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[24]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[25]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[26]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[27]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[28]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[30]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart/int/div_reg[11]' (FDE) to 'uart/int/div_reg[12]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/int/div_reg[12] )
+INFO: [Synth 8-3886] merging instance 'uart/int/aux_Acc_Count_reg[29]' (FDCE) to 'uart/int/aux_Acc_Count_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/int/aux_Acc_Count_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\bip/control/aux_finish_program_reg )
+INFO: [Synth 8-3886] merging instance 'uart/int/div_reg[10]' (FDE) to 'uart/int/div_reg[13]'
+WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[12]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_Acc_Count_reg[14]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/z_flag_reg) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/aux_BIP_reg) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (Program_memory/ram_data_reg[11]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[15]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[14]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[13]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[12]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[11]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[10]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[9]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[8]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[7]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[6]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[5]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[4]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[3]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[2]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[1]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/A_reg[0]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[10] with 1st driver pin 'bip/control/aux_PC0_inferred/out[10]' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[10] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net PC[10] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[9] with 1st driver pin 'bip/control/aux_PC0_inferred/out[9]' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[9] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net PC[9] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[8] with 1st driver pin 'bip/control/aux_PC0_inferred/out[8]' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[8] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net PC[8] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[7] with 1st driver pin 'bip/control/aux_PC0_inferred/out[7]' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[7] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net PC[7] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[6] with 1st driver pin 'bip/control/aux_PC0_inferred/out[6]' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[6] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net PC[6] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[5] with 1st driver pin 'bip/control/aux_PC0_inferred/out[5]' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[5] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net PC[5] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[4] with 1st driver pin 'bip/control/aux_PC0_inferred/out[4]' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[4] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net PC[4] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[3] with 1st driver pin 'bip/control/aux_PC0_inferred/out[3]' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[3] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net PC[3] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[2] with 1st driver pin 'bip/control/aux_PC0_inferred/out[2]' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[2] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net PC[2] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[1] with 1st driver pin 'bip/control/aux_PC0_inferred/out[1]' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[1] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net PC[1] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[0] with 1st driver pin 'bip/control/aux_PC0_inferred/out[0]' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net PC[0] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net PC[0] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/ControlUnit.v:30]
+WARNING: [Synth 8-3332] Sequential element (bip/control/aux_finish_program_reg) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[15]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[15] with 1st driver pin 'bip/datapath/ACC_reg[15]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[15] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[15] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[14]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[14] with 1st driver pin 'bip/datapath/ACC_reg[14]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[14] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[14] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[13]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[13] with 1st driver pin 'bip/datapath/ACC_reg[13]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[13] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[13] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[12]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[12] with 1st driver pin 'bip/datapath/ACC_reg[12]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[12] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[12] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[11]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[11] with 1st driver pin 'bip/datapath/ACC_reg[11]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[11] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[11] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[10]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[10] with 1st driver pin 'bip/datapath/ACC_reg[10]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[10] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[10] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[9]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[9] with 1st driver pin 'bip/datapath/ACC_reg[9]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[9] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[9] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[8]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[8] with 1st driver pin 'bip/datapath/ACC_reg[8]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[8] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[8] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[7]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[7] with 1st driver pin 'bip/datapath/ACC_reg[7]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[7] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[7] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[6]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[6] with 1st driver pin 'bip/datapath/ACC_reg[6]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[6] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[6] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[5]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[5] with 1st driver pin 'bip/datapath/ACC_reg[5]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[5] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[5] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[4]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[4] with 1st driver pin 'bip/datapath/ACC_reg[4]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[4] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[4] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[3]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[3] with 1st driver pin 'bip/datapath/ACC_reg[3]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[3] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[3] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[2]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[2] with 1st driver pin 'bip/datapath/ACC_reg[2]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[2] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[2] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[1]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[1] with 1st driver pin 'bip/datapath/ACC_reg[1]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[1] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[1] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+WARNING: [Synth 8-3332] Sequential element (bip/datapath/ACC_reg[0]) is unused and will be removed from module Top_level.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[0] with 1st driver pin 'bip/datapath/ACC_reg[0]/Q' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net In_Data[0] with 2nd driver pin 'GND' [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net In_Data[0] is connected to constant driver, other driver is ignored [/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.srcs/sources_1/new/Datapath.v:41]
+INFO: [Synth 8-3886] merging instance 'uart/int/div_reg[8]' (FDE) to 'uart/int/div_reg[9]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:43 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 177 ; free virtual = 4169
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:56 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 118 ; free virtual = 4048
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:59 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 126 ; free virtual = 4038
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[7]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[6]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[5]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[4]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[3]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[2]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[1]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/rx_mod/b_reg_reg[0]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/state_reg_reg[1]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/state_reg_reg[0]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[13]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[9]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[4]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[3]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[1]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[0]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[7]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[6]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[5]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/div_reg[2]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/out_reg[7]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/int/is_s_reg) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[7]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[6]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[5]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[4]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[3]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[2]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[1]) is unused and will be removed from module Top_level.
+WARNING: [Synth 8-3332] Sequential element (uart/tx_mod/b_reg_reg[0]) is unused and will be removed from module Top_level.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:59 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 136 ; free virtual = 4038
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:01:00 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 135 ; free virtual = 4039
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:01:00 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 135 ; free virtual = 4039
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:01:00 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 135 ; free virtual = 4039
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:01:00 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 134 ; free virtual = 4039
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:01:00 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 134 ; free virtual = 4039
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:01:00 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 134 ; free virtual = 4039
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     1|
+|3     |LUT2 |     3|
+|4     |LUT3 |     8|
+|5     |LUT4 |     7|
+|6     |LUT5 |    10|
+|7     |LUT6 |    17|
+|8     |FDCE |    18|
+|9     |FDPE |     1|
+|10    |FDRE |     9|
+|11    |IBUF |     3|
+|12    |OBUF |     1|
++------+-----+------+
+
+Report Instance Areas: 
++------+-----------+-------------+------+
+|      |Instance   |Module       |Cells |
++------+-----------+-------------+------+
+|1     |top        |             |    79|
+|2     |  uart     |UART         |    74|
+|3     |    br_g   |br_generator |    20|
+|4     |    rx_mod |rx_module    |    28|
+|5     |    tx_mod |tx_module    |    26|
++------+-----------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:01:00 . Memory (MB): peak = 1619.984 ; gain = 452.758 ; free physical = 134 ; free virtual = 4039
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 81 critical warnings and 87 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 1619.984 ; gain = 127.430 ; free physical = 189 ; free virtual = 4093
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:01:00 . Memory (MB): peak = 1619.992 ; gain = 452.758 ; free physical = 189 ; free virtual = 4094
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+111 Infos, 115 Warnings, 84 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 1619.992 ; gain = 464.414 ; free physical = 181 ; free virtual = 4094
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/synth_1/Top_level.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Top_level_utilization_synth.rpt -pb Top_level_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.18 . Memory (MB): peak = 1643.996 ; gain = 0.000 ; free physical = 180 ; free virtual = 4095
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 14 13:51:46 2019...

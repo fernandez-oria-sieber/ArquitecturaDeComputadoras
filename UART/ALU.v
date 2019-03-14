@@ -5,7 +5,11 @@ module ALU #(parameter size = 8)
 		input[5:0] Op,
 		input signed[size-1:0] A,
 		input signed[size-1:0] B,
+<<<<<<< HEAD
 		output signed [size-1:0] Leds
+=======
+		output[size-1:0] Leds
+>>>>>>> origin/develop
 	);	
 	
 	// signal declaration

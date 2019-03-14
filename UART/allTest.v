@@ -9,10 +9,21 @@ module allTest;
 	reg clk, reset, rx_done_tick, tx_done_tick;
 	wire wr, rd, tx_start, tx_full, rx_empty;
 	wire tx, s_tick;
+<<<<<<< HEAD
 	
     rx_interface int_rx (clk, reset,rx_done_tick, rd, dout, a, b, op, rx_empty);
     ALU alu (op, a, b, leds);
     tx_interface int_tx (clk, reset,tx_done_tick, rx_empty, leds, d_in, tx_start, rd);
+=======
+//	reg rx;
+
+//    br_generator br_g (clk, s_tick);
+//    rx_module rx_mod (clk, reset, rx, s_tick, rx_done_tick, dout);
+    rx_interface int_rx (clk, reset,rx_done_tick, rd, dout, a, b, op, rx_empty);
+    ALU alu (op, a, b, leds);
+    tx_interface int_tx (clk, reset,tx_done_tick, rx_empty, leds, d_in, tx_start, rd);
+//    tx_module tx_mod (clk, reset, tx_start , s_tick, d_in, tx_done_tick , tx);
+>>>>>>> origin/develop
     
     always 
         begin
@@ -44,7 +55,11 @@ module allTest;
                     #20 dout = 115;         // s    // #240
                     rx_done_tick = 1; 
                     #20 rx_done_tick = 0;           // #260
+<<<<<<< HEAD
                     #20 dout = "-";          // -    // #280
+=======
+                    #20 dout = 43;          // +    // #280
+>>>>>>> origin/develop
                     rx_done_tick = 1;
                     #20 rx_done_tick = 0;           // #300
                     #20 dout = 111;         // o    // #320
@@ -55,18 +70,24 @@ module allTest;
                     #20 rx_done_tick = 0;           // #380
                     rx_done_tick = 1;
                     #20 rx_done_tick = 0;           // #430
+<<<<<<< HEAD
                     //#20 rx_empty = 1;
                     #20 tx_done_tick = 1;
                     #20 tx_done_tick = 0;
+=======
+>>>>>>> origin/develop
                     #20 tx_done_tick = 1;
                     #20 tx_done_tick = 0;
                     #20 tx_done_tick = 1;
                     #20 tx_done_tick = 0;
                     #20 tx_done_tick = 1;
                     #20 tx_done_tick = 0;
+<<<<<<< HEAD
                     #20 tx_done_tick = 1;
                     #20 tx_done_tick = 0;
                     #20 tx_done_tick = 1;
                     #20 tx_done_tick = 0;                    
+=======
+>>>>>>> origin/develop
         end
 endmodule

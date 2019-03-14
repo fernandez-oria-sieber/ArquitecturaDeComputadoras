@@ -7,12 +7,17 @@ module tx_interface
     )
 	(
 	   input wire clk, reset,tx_done_tick, rx_empty,
+<<<<<<< HEAD
 	   input wire signed [7:0] leds,
+=======
+	   input wire [7:0] leds,
+>>>>>>> origin/develop
 	   output wire [7:0] d_in,
 	   output wire tx_start, rd
 	);
 	
 	// symbolic state declaration
+<<<<<<< HEAD
 	localparam [2:0]
 	idle = 2'b000,
 	operate = 2'b001,
@@ -28,14 +33,40 @@ module tx_interface
 	reg [7:0] dig, salida;
 	reg [6:0] div,i; //puede ser integer también, pero así no da warning
 	reg el_lucho_tristisimo;
+=======
+	localparam [1:0]
+	idle = 2'b00,
+	operate = 2'b01,
+	transmit = 2'b10,
+	transmit_reset = 2'b11;
+	
+	// signal declaration
+	reg rd_aux, tx_start_aux, zflag;
+	reg [1:0] state_reg;
+	reg [7:0] aux, dig, salida;
+	reg [6:0] div; //puede ser integer también, pero así no da warning
+    
+    
+>>>>>>> origin/develop
 	// body
 	// FSMD next-state logic
 	always @(posedge clk , posedge reset)
 	begin
         if (reset)
             begin
+<<<<<<< HEAD
                 state_reg <= transmit_init;
                 i = 1;
+=======
+                state_reg <= transmit_reset;
+//                salida <= 0;
+//                rd_aux <= 1'b0;
+//                zflag <= 1'b0;
+//                tx_start_aux <= 1'b0;
+//                div <= 100;
+//                dig <= 0;
+//                aux <=0;
+>>>>>>> origin/develop
             end
         else
             begin
@@ -45,6 +76,7 @@ module tx_interface
                         begin
                             state_reg = operate;
                             aux = leds;
+<<<<<<< HEAD
                             if (aux<0) state_reg=negative;
                             div = 100;
                             rd_aux = 1'b0; // Seteo en 0 para que rx_interface no vuelva a tomar datos
@@ -60,15 +92,27 @@ module tx_interface
                                     aux = - aux;
                                 end
                         end
+=======
+                            div = 100;
+                            rd_aux = 1'b0; // Seteo en 0 para que rx_interface no vuelva a tomar datos
+                        end
+>>>>>>> origin/develop
                     operate :
                         begin
                             dig = aux / div;    // divido para obtener el digito a transmitir (ej, 123/100 - obtengo 1 en it. 1)
                             div = div / 10;     // Divido por 10 para en la sig iteración obtener el sig digito (100/10=10)
                             if(dig || zflag == 1) state_reg = transmit; // Entro si dig != 0 ó zflag = 1 si ya transmiti un valor y tengo que mandar un 0
+<<<<<<< HEAD
                             salida = dig+48; // Sumo 48 al digito enviado para transmitir en ascii
                         end
                     transmit :
                        begin
+=======
+                        end
+                    transmit :
+                       begin
+                          salida = dig+48; // Sumo 48 al digito enviado para transmitir en ascii
+>>>>>>> origin/develop
                           tx_start_aux = 1'b1;
                           if (tx_done_tick)
                             begin
@@ -90,6 +134,7 @@ module tx_interface
                         end 
                     transmit_reset :
                        begin
+<<<<<<< HEAD
                          if (salida != 10) salida = 13; // nueva linea en ascii
                          tx_start_aux = 1'b1; 
                          if (tx_done_tick) 
@@ -128,6 +173,22 @@ module tx_interface
                                 tx_start_aux = 1'b0;
                             end
                         end 
+=======
+                          salida = 13; // enter en ascii (reset)
+                          
+                          tx_start_aux = 1'b1; 
+                          if (tx_done_tick) 
+                            begin
+                                salida = 0;
+                                rd_aux = 1'b0;
+                                zflag = 1'b0;
+                                tx_start_aux = 1'b0;
+                                dig = 0;
+                                aux =0;
+                                state_reg = idle;
+                            end
+                        end     
+>>>>>>> origin/develop
 		        endcase //end case (state_reg)
 		    end //end else
 	end //end always

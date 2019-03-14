@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Mar  7 13:10:45 2019
+# Process ID: 7133
+# Current directory: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.runs/synth_1
+# Command line: vivado -log Main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Main.tcl
+# Log file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.runs/synth_1/Main.vds
+# Journal file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_ALU/TP_ALU.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source Main.tcl -notrace
