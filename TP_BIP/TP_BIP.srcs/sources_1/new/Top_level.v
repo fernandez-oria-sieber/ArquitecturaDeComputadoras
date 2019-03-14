@@ -31,11 +31,12 @@ wire[15:0] Program_Data, In_Data, Out_Data;
 wire[31:0] out_Acc_Counter;
    
 UART uart(rx, clk, reset, finish_program, out_Acc_Counter, tx, BIP_enable);    
-sinc_memory #(.INIT_FILE("")) Data_memory(.Rd(RdRAM), .Wr(WrRAM),.clk(clk),.ena(BIP_enable), .Addr(Addr), .In_Data(In_Data), .Out_Data(Out_Data));
-sinc_memory #(.INIT_FILE("")) Program_memory (1, 0, clk, BIP_enable, PC, 0, Program_Data);
+sinc_memory #(.INIT_FILE("/home/luchosteam/Documents/instrucciones.txt")) Data_memory(.Rd(RdRAM), .Wr(WrRAM),.clk(clk),.ena(BIP_enable), .Addr(Addr), .In_Data(In_Data), .Out_Data(Out_Data));
+sinc_memory #(.INIT_FILE("/home/luchosteam/Documents/datos.txt")) Program_memory (1, 0, clk, BIP_enable, PC, 0, Program_Data);
 CPU bip(BIP_enable, clk, reset, Program_Data, Out_Data, In_Data, PC, WrRAM, RdRAM, finish_program);
 
-
-assign Addr = Program_data[10:0];
+assign out_Acc_Counter[26:16] = PC;
+assign out_Acc_Counter[15:0] = In_Data;
+assign Addr = Program_Data[10:0];
 
 endmodule

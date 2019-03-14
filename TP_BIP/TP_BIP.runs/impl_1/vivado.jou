@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Tue Mar 12 15:17:05 2019
-# Process ID: 25539
+# Start of session at: Thu Mar 14 13:55:24 2019
+# Process ID: 17879
 # Current directory: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1
-# Command line: vivado -log UART.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source UART.tcl -notrace
-# Log file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/UART.vdi
+# Command line: vivado -log Top_level.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Top_level.tcl -notrace
+# Log file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/Top_level.vdi
 # Journal file: /usr/local/magnetic2/Xilinx/Vivado/Vivado/2018.2/bin/Arquitectura2018/TP_BIP/TP_BIP.runs/impl_1/vivado.jou
 #-----------------------------------------------------------
-source UART.tcl -notrace
+source Top_level.tcl -notrace
